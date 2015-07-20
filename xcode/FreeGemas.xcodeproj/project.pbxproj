@@ -49,7 +49,6 @@
 		D495F6C61B5CFEC800632CBB /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		D495F6C71B5CFEC800632CBB /* MultipleMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleMatch.h; sourceTree = "<group>"; };
 		D495F6C81B5CFEC800632CBB /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
-		D495F6C91B5CFEC800632CBB /* resManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resManager.h; sourceTree = "<group>"; };
 		D495F6CA1B5CFEC800632CBB /* ScoreTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTable.h; sourceTree = "<group>"; };
 		D495F6CB1B5CFEC800632CBB /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
 		D495F6CC1B5CFEC800632CBB /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
@@ -145,7 +144,6 @@
 				D495F6C61B5CFEC800632CBB /* Match.h */,
 				D495F6C71B5CFEC800632CBB /* MultipleMatch.h */,
 				D495F6C81B5CFEC800632CBB /* ParticleSystem.h */,
-				D495F6C91B5CFEC800632CBB /* resManager.h */,
 				D495F6CA1B5CFEC800632CBB /* ScoreTable.h */,
 				D495F6CB1B5CFEC800632CBB /* Square.h */,
 				D495F6CC1B5CFEC800632CBB /* State.h */,
