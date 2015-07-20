@@ -127,6 +127,7 @@ void StateMainMenu::buttonDown(Gosu::Button btn)
             
             if (mY >= mMenuYStart && mY <= mMenuYEnd)
             {
+                mMenuSelectedOption = (mY - mMenuYStart) / mMenuYGap;
                 optionChosen();
             }
         }
