@@ -27,7 +27,7 @@
 #define _SCORETABLE_
 
 
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 
 class Game;
@@ -54,19 +54,22 @@ public:
 private:
 
     /// Image for the rendered header
-    GoSDL::Image mRenderedHeader;
+    Gosu::Image mRenderedHeader;
 
     /// Image for the rendered score
-    GoSDL::Image mRenderedScore;
+    Gosu::Image mRenderedScore;
 
     /// Image for the last high score
-    GoSDL::Image mRenderedLastScore;
+    Gosu::Image mRenderedLastScore;
 
     /// Width of the score board
     int scoreBoardWidth;
 
     /// Reference to the main game
     Game * mGame;
+    
+    /// Returns the last high score, and updates it to max(score,lastHighScore).
+    int getAndUpdateScore(int score);
 };
 
 #endif

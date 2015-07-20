@@ -3,23 +3,22 @@
 
 #include "Animation.h"
 
-#include <memory>
+#include <vector>
 
-#include "go_window.h"
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 class JewelGroupAnim
 {
 public:
-    void loadResources (GoSDL::Window * w)
+    void loadResources (Gosu::Window * w)
     {
-        imgGems[0].setWindowAndPath(w, "media/gemWhite.png");
-        imgGems[1].setWindowAndPath(w, "media/gemRed.png");
-        imgGems[2].setWindowAndPath(w, "media/gemPurple.png");
-        imgGems[3].setWindowAndPath(w, "media/gemOrange.png");
-        imgGems[4].setWindowAndPath(w, "media/gemGreen.png");
-        imgGems[5].setWindowAndPath(w, "media/gemYellow.png");
-        imgGems[6].setWindowAndPath(w, "media/gemBlue.png");
+        imgGems.push_back(Gosu::Image(L"media/gemWhite.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemRed.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemPurple.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemOrange.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemGreen.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemYellow.png"));
+        imgGems.push_back(Gosu::Image(L"media/gemBlue.png"));
 
         for (int i = 0; i < 7; ++i)
         {
@@ -59,7 +58,7 @@ public:
     }
 
 private:
-    GoSDL::Image imgGems[7];
+    std::vector<Gosu::Image> imgGems;
 
     int posX[7], posFinalY;
 

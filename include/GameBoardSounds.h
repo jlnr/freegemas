@@ -1,8 +1,8 @@
 #ifndef GAME_BOARD_SOUNDS_H
 #define GAME_BOARD_SOUNDS_H
 
-#include "go_sound.h"
-
+#include <Gosu/Gosu.hpp>
+#include <memory>
 
 class GameBoardSounds
 {
@@ -21,9 +21,9 @@ private:
 
     /// @{
     /// @name Sounds of the game
-    GoSDL::Sound mSfxMatch1, mSfxMatch2, mSfxMatch3;
-    GoSDL::Sound mSfxSelect;
-    GoSDL::Sound mSfxFall;
+    std::unique_ptr<Gosu::Sample> mSfxMatch1, mSfxMatch2, mSfxMatch3;
+    std::unique_ptr<Gosu::Sample> mSfxSelect;
+    std::unique_ptr<Gosu::Sample> mSfxFall;
     /// @}
 };
 

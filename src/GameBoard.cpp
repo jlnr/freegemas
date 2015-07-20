@@ -62,17 +62,16 @@ void GameBoard::endGame(int score)
 
 void GameBoard::loadResources()
 {
-    mImgBoard.setWindowAndPath(mGame, "media/gemBoard.png");
-    mImgWhite.setWindowAndPath(mGame, "media/gemWhite.png");
-    mImgRed.setWindowAndPath(mGame, "media/gemRed.png");
-    mImgPurple.setWindowAndPath(mGame, "media/gemPurple.png");
-    mImgOrange.setWindowAndPath(mGame, "media/gemOrange.png");
-    mImgGreen.setWindowAndPath(mGame, "media/gemGreen.png");
-    mImgYellow.setWindowAndPath(mGame, "media/gemYellow.png");
-    mImgBlue.setWindowAndPath(mGame, "media/gemBlue.png");
+    mImgWhite.reset(new Gosu::Image(L"media/gemWhite.png"));
+    mImgRed.reset(new Gosu::Image(L"media/gemRed.png"));
+    mImgPurple.reset(new Gosu::Image(L"media/gemPurple.png"));
+    mImgOrange.reset(new Gosu::Image(L"media/gemOrange.png"));
+    mImgGreen.reset(new Gosu::Image(L"media/gemGreen.png"));
+    mImgYellow.reset(new Gosu::Image(L"media/gemYellow.png"));
+    mImgBlue.reset(new Gosu::Image(L"media/gemBlue.png"));
 
     // Load the image for the square selector
-    mImgSelector.setWindowAndPath(mGame, "media/selector.png");
+    mImgSelector.reset(new Gosu::Image(L"media/selector.png"));
 
     // Initialise the hint
     mHint.setWindow(mGame);
@@ -269,14 +268,14 @@ void GameBoard::update()
 void GameBoard::draw()
 {
     // Get mouse position
-    int mX = (int) mGame -> getMouseX();
-    int mY = (int) mGame -> getMouseY();
+    int mX = (int) mGame -> input().mouseX();
+    int mY = (int) mGame -> input().mouseY();
 
     // Draw the selector if the mouse is over a gem
     if (overGem(mX, mY) )
     {
         // Draw the selector over that gem
-        mImgSelector.draw(
+        mImgSelector->draw(
             241 + getCoord(mX, mY).x * 65,
             41 + getCoord(mX, mY).y * 65,
             4);
@@ -285,9 +284,9 @@ void GameBoard::draw()
     // Draw the selector if a gem has been selected
     if (mState == eGemSelected)
     {
-        mImgSelector.draw(241 + mSelectedSquareFirst.x * 65,
+        mImgSelector->draw(241 + mSelectedSquareFirst.x * 65,
               41 + mSelectedSquareFirst.y * 65,
-              4, 1, 1, 0, 255, {0, 255, 255, 255});
+              4, 1, 1, Gosu::Color::CYAN);
     }
 
     // Draw the hint
@@ -311,7 +310,7 @@ void GameBoard::draw()
 
 
     // On to the gem drawing procedure. Let's have a pointer to the image of each gem
-    GoSDL::Image * img = NULL;
+    Gosu::Image * img = NULL;
 
     // Top left position of the board
     int posX = 241;
@@ -329,31 +328,31 @@ void GameBoard::draw()
             switch(mBoard.squares[i][j])
             {
                 case sqWhite:
-                img = &mImgWhite;
+                img = &*mImgWhite;
                 break;
 
                 case sqRed:
-                img = &mImgRed;
+                img = &*mImgRed;
                 break;
 
                 case sqPurple:
-                img = &mImgPurple;
+                img = &*mImgPurple;
                 break;
 
                 case sqOrange:
-                img = &mImgOrange;
+                img = &*mImgOrange;
                 break;
 
                 case sqGreen:
-                img = &mImgGreen;
+                img = &*mImgGreen;
                 break;
 
                 case sqYellow:
-                img = &mImgYellow;
+                img = &*mImgYellow;
                 break;
 
                 case sqBlue:
-                img = &mImgBlue;
+                img = &*mImgBlue;
                 break;
 
                 case sqEmpty:
@@ -453,7 +452,7 @@ void GameBoard::draw()
                 continue;
             }
 
-            img->draw(imgX, imgY, 3, 1, 1, 0, imgAlpha);
+            img->draw(imgX, imgY, 3, 1, 1, Gosu::Color(imgAlpha, 255, 255, 255));
         }
 
 

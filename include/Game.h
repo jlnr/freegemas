@@ -4,13 +4,12 @@
 #include <string>
 #include <memory>
 
-#include "go_window.h"
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 
 class State;
 
-class Game : public GoSDL::Window
+class Game : public Gosu::Window
 {
 
 public:
@@ -21,19 +20,19 @@ public:
 
     void draw();
 
-    void buttonDown(SDL_Keycode button);
-    void buttonUp(SDL_Keycode button);
-    void mouseButtonDown(Uint8 button);
-    void mouseButtonUp(Uint8 button);
+    void buttonDown(Gosu::Button button);
+    void buttonUp(Gosu::Button button);
 
     void changeState(std::string S);
+    
+    bool needsCursor() const;
 
 private:
 
     std::shared_ptr<State> mCurrentState = nullptr;
     std::string mCurrentStateString;
 
-    GoSDL::Image mMouseCursor;
+    Gosu::Image mMouseCursor;
 
 };
 

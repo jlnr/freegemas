@@ -1,13 +1,12 @@
 #ifndef GAME_INDICATORS_H
 #define GAME_INDICATORS_H
 
-#include "go_font.h"
-#include "go_image.h"
-#include "go_music.h"
+#include <Gosu/Gosu.hpp>
 
 #include "BaseButton.h"
 
 #include <string>
+#include <memory>
 
 class Game;
 class StateGame;
@@ -57,26 +56,24 @@ private:
     double mRemainingTimePrevious = 0;
 
     /// Font for the timer
-    GoSDL::Font mFontTime;
+    std::unique_ptr<Gosu::Font> mFontTime;
 
     /// Font for the current-score text
-    GoSDL::Font mFontScore;
+    std::unique_ptr<Gosu::Font> mFontScore;
 
    // Background of the timer
-    GoSDL::Image mImgTimeBackground;
+    std::unique_ptr<Gosu::Image> mImgTimeBackground;
 
     /// Background for the current-score board
-    GoSDL::Image mImgScoreBackground;
+    std::unique_ptr<Gosu::Image> mImgScoreBackground;
 
     /// Image for the clock
-    GoSDL::Image mImgTime;
-    GoSDL::Image mImgTimeHeader;
-    GoSDL::Image mImgTimeHeaderShadow;
+    std::unique_ptr<Gosu::Image> mImgTime;
+    std::unique_ptr<Gosu::Image> mImgTimeHeader;
 
     /// Image for the current-score
-    GoSDL::Image mImgScore;
-    GoSDL::Image mImgScoreHeader;
-    GoSDL::Image mImgScoreHeaderShadow;
+    std::unique_ptr<Gosu::Image> mImgScore;
+    std::unique_ptr<Gosu::Image> mImgScoreHeader;
 
     /// @{
     /// @name Buttons of the interface
@@ -87,7 +84,7 @@ private:
     /// @}
 
     /// Game music
-    GoSDL::Music sfxSong;
+    std::unique_ptr<Gosu::Song> sfxSong;
 };
 
 #endif

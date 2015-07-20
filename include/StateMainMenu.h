@@ -4,8 +4,7 @@
 #include "State.h"
 #include "JewelGroupAnim.h"
 
-#include "go_image.h"
-#include "go_font.h"
+#include <Gosu/Gosu.hpp>
 
 
 #include <vector>
@@ -47,9 +46,7 @@ public:
      * well as the mouse.
      *
      */
-    void buttonDown(SDL_Keycode B);
-
-    void mouseButtonDown(Uint8 button);
+    void buttonDown(Gosu::Button btn);
 
     ~StateMainMenu();
 
@@ -73,16 +70,13 @@ private:
     int mAnimationTotalSteps;
 
     /// Image for the background
-    GoSDL::Image mImgBackground;
+    Gosu::Image mImgBackground;
 
     /// Image for the logo
-    GoSDL::Image mImgLogo;
+    Gosu::Image mImgLogo;
 
     /// Image for the higlight of the menu entry
-    GoSDL::Image mImgHighl;
-
-    /// Font for the menu entries
-    GoSDL::Font mFont;
+    Gosu::Image mImgHighl;
 
     /// Class for the animation of the decorating jewels
     JewelGroupAnim mJewelAnimation;
@@ -92,8 +86,7 @@ private:
 
     /// List of menu options.
     vector<string> mMenuTargets;
-    vector<GoSDL::Image> mMenuRenderedTexts;
-    vector<GoSDL::Image> mMenuRenderedShadows;
+    vector<Gosu::Image> mMenuRenderedTexts;
 
     /// It gets executed when the user choses an option. It changes the state
     ///  to the proper one.

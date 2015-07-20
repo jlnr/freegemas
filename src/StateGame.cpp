@@ -5,7 +5,9 @@
 #include <map>
 #include <string>
 
-StateGame::StateGame(Game * p) : State(p)
+StateGame::StateGame(Game * p) : State(p),
+    // Load the loading screen
+    mImgLoadingBanner(L"media/loadingBanner.png")
 {
     lDEBUG << Log::CON("StateGame");
 
@@ -16,9 +18,6 @@ StateGame::StateGame(Game * p) : State(p)
 
     // Initialise game board
     mGameBoard.setGame(p, this);
-
-    // Load the loading screen
-    mImgLoadingBanner.setWindowAndPath(p, "media/loadingBanner.png");
 }
 
 StateGame::~StateGame ()
@@ -48,7 +47,7 @@ void StateGame::update()
     }
 
     // Compute remaining time
-    double remainingTime = (mTimeStart - SDL_GetTicks()) / 1000;
+    double remainingTime = (mTimeStart - Gosu::milliseconds()) / 1000;
 
     mGameIndicators.updateTime(remainingTime);
 
@@ -73,7 +72,7 @@ void StateGame::draw()
     }
 
     // In all the other states, the full window is drawn
-    mImgBoard.draw(0,0,0);
+    mImgBoard->draw(0,0,0);
 
     // Draw the indicators (buttons and labels)
     mGameIndicators.draw();
@@ -82,48 +81,46 @@ void StateGame::draw()
     mGameBoard.draw();
 }
 
-void StateGame::buttonDown(SDL_Keycode button)
+void StateGame::buttonDown(Gosu::Button btn)
 {
-    if (button == SDLK_ESCAPE)
+    if (btn.id() == Gosu::kbEscape)
     {
         mGame -> changeState("stateMainMenu");
     }
 
-    else if (button == SDLK_h)
+    else if (btn.id() == Gosu::kbH)
     {
         showHint();
     }
-}
-
-void StateGame::mouseButtonDown(Uint8 button)
-{
+    
     // Left mouse button was pressed
-    if (button == SDL_BUTTON_LEFT)
+    else if (btn.id() == Gosu::msLeft)
     {
         mMousePressed = true;
-
+        
         // Get click location
-        int mouseX = mGame->getMouseX();
-        int mouseY = mGame->getMouseY();
-
+        int mouseX = mGame->input().mouseX();
+        int mouseY = mGame->input().mouseY();
+        
         // Inform the UI
         mGameIndicators.click(mouseX, mouseY);
-
+        
         // Inform the board
         mGameBoard.mouseButtonDown(mouseX, mouseY);
     }
+
 }
 
-void StateGame::mouseButtonUp(Uint8 button)
+void StateGame::buttonUp(Gosu::Button btn)
 {
     // Left mouse button was released
-    if (button == SDL_BUTTON_LEFT)
+    if (btn.id() == Gosu::msLeft)
     {
         mMousePressed = false;
 
         // Get click location
-        int mouseX = mGame->getMouseX();
-        int mouseY = mGame->getMouseY();
+        int mouseX = mGame->input().mouseX();
+        int mouseY = mGame->input().mouseY();
 
         // Inform the board
         mGameBoard.mouseButtonUp(mouseX, mouseY);
@@ -164,7 +161,7 @@ void StateGame::setState (tState state)
 void StateGame::loadResources()
 {
     // Load the background image
-    mImgBoard.setWindowAndPath(mGame, "media/board.png");
+    mImgBoard.reset(new Gosu::Image(L"media/board.png"));
 
     mGameIndicators.loadResources();
     mGameBoard.loadResources();
@@ -179,7 +176,7 @@ void StateGame::resetGame()
 void StateGame::resetTime()
 {
     // Default time is 2 minutes
-    mTimeStart = SDL_GetTicks() + 2 * 60 * 1000;
+    mTimeStart = Gosu::milliseconds() + 2 * 60 * 1000;
 }
 
 void StateGame::showHint()

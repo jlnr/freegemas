@@ -3,14 +3,14 @@
 
 #include "Coord.h"
 
-#include "go_window.h"
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
+#include <memory>
 
 class GameHint
 {
 public:
     /// Sets the parent window and loads the resources
-    void setWindow (GoSDL::Window * w);
+    void setWindow (Gosu::Window * w);
 
     /// Places the hint at the specified position and shows it
     void showHint(Coord location);
@@ -33,7 +33,7 @@ private:
     Coord mHintLocation;
 
     /// Image for the hint
-    GoSDL::Image mImgSelector;
+    std::unique_ptr<Gosu::Image> mImgSelector;
 };
 
 #endif

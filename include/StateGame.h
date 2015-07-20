@@ -33,10 +33,7 @@
 #include <set>
 using namespace std;
 
-#include "go_image.h"
-#include "go_font.h"
-#include "go_sound.h"
-#include "go_music.h"
+#include <Gosu/Gosu.hpp>
 
 #include "State.h"
 #include "Board.h"
@@ -70,10 +67,8 @@ public:
     void update();
     void draw();
 
-    void buttonDown(SDL_Keycode button);
-
-    void mouseButtonDown(Uint8 button);
-    void mouseButtonUp(Uint8 button);
+    void buttonDown(Gosu::Button btn);
+    void buttonUp(Gosu::Button btn);
 
 private:
 
@@ -115,10 +110,10 @@ private:
     GameBoard mGameBoard;
 
     /// Loading screen image
-    GoSDL::Image mImgLoadingBanner;
+    Gosu::Image mImgLoadingBanner;
 
     // Background image
-    GoSDL::Image mImgBoard;
+    std::unique_ptr<Gosu::Image> mImgBoard;
 
     /// Starting time
     double mTimeStart;

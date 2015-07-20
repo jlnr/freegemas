@@ -30,25 +30,14 @@
 using namespace std;
 
 #include "log.h"
-#include "go_image.h"
-#include "go_font.h"
-
-namespace GoSDL {
-  class Window;
-}
+#include <Gosu/Gosu.hpp>
 
 class FloatingScore{
 public:
-    FloatingScore(GoSDL::Window * parentWindow, int score, float x, float y, float z) :
-        x_(x), y_(y), z_(z), mCurrentStep(0), mTotalSteps(50) {
-
-        // Load the font
-        GoSDL::Font tempFont;
-        tempFont.setAll(parentWindow, "media/fuentelcd.ttf", 60);
-
-        // Build the image
-        mScoreImage = tempFont.renderText(std::to_string(score), {255, 255, 255, 255});
-        mScoreImageShadow = tempFont.renderText(std::to_string(score), {0, 0, 0, 255});
+    FloatingScore(Gosu::Window * parentWindow, int score, float x, float y, float z) :
+        x_(x), y_(y), z_(z), mCurrentStep(0), mTotalSteps(50),
+        mScoreImage(Gosu::createText(std::to_wstring(score), L"media/fuentelcd.ttf", 60))
+    {
     }
 
     bool ended(){
@@ -65,16 +54,15 @@ public:
         float posX = 241 + x_ * 65;
         float posY = 41 + y_ * 65 - (1 - p) * 20;
 
-        mScoreImage.draw(posX, posY, z_, 1, 1, 0, (int)(p * 255));
+        mScoreImage.draw(posX, posY, z_, 1, 1, Gosu::Color(p * 255, 255, 255, 255));
 
-        mScoreImageShadow.draw(posX + 2, posY + 2, z_ - 0.1, 1, 1, 0, (int)(p * 255));
+        mScoreImage.draw(posX + 2, posY + 2, z_ - 0.1, 1, 1, Gosu::Color(p * 255, 0, 0, 0));
 
-        mScoreImageShadow.draw(posX - 2, posY - 2, z_ - 0.1, 1, 1, 0, (int)(p * 255));
+        mScoreImage.draw(posX - 2, posY - 2, z_ - 0.1, 1, 1, Gosu::Color(p * 255, 0, 0, 0));
 
     }
 private:
-    GoSDL::Image mScoreImage;
-    GoSDL::Image mScoreImageShadow;
+    Gosu::Image mScoreImage;
 
     float x_;
     float y_;

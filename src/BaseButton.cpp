@@ -1,48 +1,43 @@
 #include "BaseButton.h"
 
-#include "go_font.h"
+#include <Gosu/Gosu.hpp>
 
 BaseButton::BaseButton() { }
 
 
-void BaseButton::set (GoSDL::Window * parentWindow, std::string caption, std::string iconPath)
+void BaseButton::set (Gosu::Window * parentWindow, std::wstring caption, std::wstring iconPath)
 {
     mParentWindow = parentWindow;
 
     // Load the background image
-    mImgBackground.setWindowAndPath(mParentWindow, "media/buttonBackground.png");
+    mImgBackground.reset(new Gosu::Image(L"media/buttonBackground.png"));
 
     // Set the flag
-    mHasIcon = iconPath != "";
+    mHasIcon = !iconPath.empty();
 
     // Load the icon image
     if (mHasIcon)
     {
-        mImgIcon.setWindowAndPath(mParentWindow, "media/" + iconPath);
+        mImgIcon.reset(new Gosu::Image(L"media/" + iconPath));
     }
 
     setText(caption);
 }
 
-void BaseButton::setText(std::string caption)
+void BaseButton::setText(std::wstring caption)
 {
-    // Load the font for the button caption
-    GoSDL::Font textFont;
-    textFont.setAll(mParentWindow, "media/fuenteNormal.ttf", 27);
-
     // Generate the button caption texture
-    mImgCaption = textFont.renderText(caption, {255, 255, 255, 255});
-    mImgCaptionShadow = textFont.renderText(caption, {0, 0, 0, 255});
+    Gosu::Bitmap bitmap = Gosu::createText(caption, L"media/fuenteNormal.ttf", 27);
+    mImgCaption.reset(new Gosu::Image(bitmap));
 
     // Calculate the position of the text
     if (mHasIcon)
     {
-        mTextHorizontalPosition = 40 + (mImgBackground.getWidth() - 40) / 2 - mImgCaption.getWidth() / 2;
+        mTextHorizontalPosition = 40 + (mImgBackground->width() - 40) / 2 - mImgCaption->width() / 2;
     }
-
     else
     {
-        mTextHorizontalPosition = mImgBackground.getWidth() / 2 - mImgCaption.getWidth() / 2;
+        mTextHorizontalPosition = mImgBackground->width() / 2 - mImgCaption->width() / 2;
     }
 }
 
@@ -54,20 +49,19 @@ void BaseButton::draw(int x, int y, double z)
 
     if (mHasIcon)
     {
-        mImgIcon.draw(x + 7, y, z + 1);
+        mImgIcon->draw(x + 7, y, z + 1);
     }
 
-    mImgCaption.draw(x + mTextHorizontalPosition, y + 5, z + 2);
-    mImgCaptionShadow.draw(x + mTextHorizontalPosition + 1, y + 7, z + 1,  1, 1, 1, 128);
+    mImgCaption->draw(x + mTextHorizontalPosition, y + 5, z + 2);
+    mImgCaption->draw(x + mTextHorizontalPosition + 1, y + 7, z + 1, 1, 1, Gosu::Color(128, 0, 0, 0));
 
-    mImgBackground.draw(x, y, z);
-
+    mImgBackground->draw(x, y, z);
 }
 
 bool BaseButton::clicked(unsigned int mX, unsigned int mY)
 {
-    if(mX > mLastX && mX < mLastX + mImgBackground.getWidth() &&
-       mY > mLastY && mY < mLastY + mImgBackground.getHeight())
+    if(mX > mLastX && mX < mLastX + mImgBackground->width() &&
+       mY > mLastY && mY < mLastY + mImgBackground->height())
        {
         return true;
     }else

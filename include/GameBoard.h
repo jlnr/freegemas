@@ -9,7 +9,7 @@
 #include "ParticleSystem.h"
 #include "ScoreTable.h"
 
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 class Game;
 class StateGame;
@@ -94,16 +94,15 @@ private:
     GameBoardSounds mGameBoardSounds;
 
     /// Image for the gem selector
-    GoSDL::Image mImgSelector;
+    std::unique_ptr<Gosu::Image> mImgSelector;
 
-    GoSDL::Image mImgBoard;
-    GoSDL::Image mImgWhite;
-    GoSDL::Image mImgRed;
-    GoSDL::Image mImgPurple;
-    GoSDL::Image mImgOrange;
-    GoSDL::Image mImgGreen;
-    GoSDL::Image mImgYellow;
-    GoSDL::Image mImgBlue;
+    std::unique_ptr<Gosu::Image> mImgWhite;
+    std::unique_ptr<Gosu::Image> mImgRed;
+    std::unique_ptr<Gosu::Image> mImgPurple;
+    std::unique_ptr<Gosu::Image> mImgOrange;
+    std::unique_ptr<Gosu::Image> mImgGreen;
+    std::unique_ptr<Gosu::Image> mImgYellow;
+    std::unique_ptr<Gosu::Image> mImgBlue;
 
     /// Animation current step
     int mAnimationCurrentStep = 0;

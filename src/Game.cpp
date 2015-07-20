@@ -6,16 +6,14 @@
 #include "StateGame.h"
 
 
-Game::Game ()
-    : GoSDL::Window(800, 600, "FreeGemas")
+Game::Game () :
+    Gosu::Window(800, 600),
+    mMouseCursor(L"media/handCursor.png")
 {
     lDEBUG << Log::CON("Game");
 
-    mMouseCursor.setWindow(this);
-    mMouseCursor.setPath("media/handCursor.png");
-
-    hideCursor();
-
+    setCaption(L"FreeGemas");
+    
     changeState("stateMainMenu");
 }
 
@@ -32,34 +30,22 @@ void Game::update ()
 
 void Game::draw ()
 {
-    mMouseCursor.draw(getMouseX(), getMouseY(), 999);
+    mMouseCursor.draw(input().mouseX(), input().mouseY(), 999);
 
     if (mCurrentState)
         mCurrentState -> draw();
 }
 
-void Game::buttonDown (SDL_Keycode button)
+void Game::buttonDown (Gosu::Button button)
 {
     if (mCurrentState)
         mCurrentState -> buttonDown(button);
 }
 
-void Game::buttonUp (SDL_Keycode button)
+void Game::buttonUp (Gosu::Button button)
 {
     if (mCurrentState)
         mCurrentState -> buttonUp(button);
-}
-
-void Game::mouseButtonDown (Uint8 button)
-{
-    if (mCurrentState)
-        mCurrentState -> mouseButtonDown(button);
-}
-
-void Game::mouseButtonUp (Uint8 button)
-{
-    if (mCurrentState)
-        mCurrentState -> mouseButtonUp(button);
 }
 
 void Game::changeState(string S)
@@ -87,4 +73,9 @@ void Game::changeState(string S)
     {
         close();
     }
+}
+
+bool Game::needsCursor() const
+{
+    return false;
 }

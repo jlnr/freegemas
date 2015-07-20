@@ -4,8 +4,6 @@
 #include "log.h"
 #include "inter.h"
 
-#include "go_font.h"
-
 #include <cmath>
 #include <tuple>
 
@@ -19,42 +17,25 @@ T clamp(T v, R bottom, R top)
     return v;
 }
 
-StateMainMenu::StateMainMenu(Game * p) : State(p)
+StateMainMenu::StateMainMenu(Game * p) : State(p),
+    // Init background image
+    mImgBackground(L"media/stateMainMenu/mainMenuBackground.png"),
+    // Init logo image
+    mImgLogo(L"media/stateMainMenu/mainMenuLogo.png"),
+    // Init menu highlight image
+    mImgHighl(L"media/stateMainMenu/menuHighlight.png")
 {
     lDEBUG << Log::CON("StateMainMenu");
 
     mCurrentTransitionState = TransitionIn;
 
-    // Init background image
-    mImgBackground.setWindow(p);
-    mImgBackground.setPath("media/stateMainMenu/mainMenuBackground.png");
-
-    // Init logo image
-    mImgLogo.setWindow(p);
-    mImgLogo.setPath("media/stateMainMenu/mainMenuLogo.png");
-
-    // Init menu highlight image
-    mImgHighl.setWindow(p);
-    mImgHighl.setPath("media/stateMainMenu/menuHighlight.png");
-
-    // Load the font
-    mFont.setWindow(p);
-    mFont.setPathAndSize("media/fuenteMenu.ttf", 30);
-
     // Menu target states
     mMenuTargets = {"stateGame", "stateHowtoplay", "stateQuit"};
 
     // Menu text items
-    SDL_Color menuTextColor = {255, 255, 255, 255};
-    mMenuRenderedTexts.push_back(mFont.renderText(_("Timetrial mode"), menuTextColor));
-    mMenuRenderedTexts.push_back(mFont.renderText(_("How to play?"), menuTextColor));
-    mMenuRenderedTexts.push_back(mFont.renderText(_("Exit"), menuTextColor));
-
-    // Menu shadows
-    menuTextColor = {0,0,0, 255};
-    mMenuRenderedShadows.push_back(mFont.renderText(_("Timetrial mode"), menuTextColor));
-    mMenuRenderedShadows.push_back(mFont.renderText(_("How to play?"), menuTextColor));
-    mMenuRenderedShadows.push_back(mFont.renderText(_("Exit"), menuTextColor));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("Timetrial mode"), L"media/fuenteMenu.ttf", 30)));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("How to play?"), L"media/fuenteMenu.ttf", 30)));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("Exit"), L"media/fuenteMenu.ttf", 30)));
 
     // Jewel group animation
     mJewelAnimation.loadResources(p);
@@ -87,7 +68,7 @@ void StateMainMenu::update(){
     }
 
     // Update menu highlighting according to mouse position
-    int mY = (int) mGame -> getMouseY();
+    int mY = (int) mGame -> input().mouseY();
 
     if(mY >= mMenuYStart && mY < mMenuYEnd)
     {
@@ -105,18 +86,18 @@ void StateMainMenu::draw(){
                           0, 255);
 
     // Draw the logo
-    mImgLogo.draw(86, 0, 2, 1, 1, 0, logoAlfa);
+    mImgLogo.draw(86, 0, 2, 1, 1, Gosu::Color(logoAlfa, 255, 255, 255));
 
     // Loop to draw the menu items
     for(size_t i = 0, s = (int) mMenuTargets.size(); i < s; ++i)
     {
         // Calculate the horizontal and vertical positions
-		int posX = std::round(800 / 2 - mMenuRenderedTexts[i].getWidth() / 2),
+		int posX = std::round(800 / 2 - mMenuRenderedTexts[i].width() / 2),
             posY = mMenuYStart + i * mMenuYGap;
 
         // Draw the text and the shadow
         mMenuRenderedTexts[i].draw(posX, posY, 3);
-        mMenuRenderedShadows[i].draw(posX, posY + 2, 2.9, 1, 1, 0, 128);
+        mMenuRenderedTexts[i].draw(posX, posY + 2, 2.9, 1, 1, Gosu::Color(128, 0, 0, 0));
 
     }
 
@@ -128,40 +109,35 @@ void StateMainMenu::draw(){
     //*/
 }
 
-void StateMainMenu::buttonDown(SDL_Keycode button)
+void StateMainMenu::buttonDown(Gosu::Button btn)
 {
-    switch (button)
+    switch (btn.id())
     {
-        case SDLK_ESCAPE:
+        case Gosu::kbEscape:
             mGame->close();
             break;
 
-        case SDLK_DOWN:
+        case Gosu::kbDown:
             mMenuSelectedOption = (mMenuSelectedOption + 1) % mMenuTargets.size();
             break;
 
-        case SDLK_UP:
+        case Gosu::kbUp:
             mMenuSelectedOption = (mMenuSelectedOption - 1) % mMenuTargets.size();
             break;
 
-        case SDLK_RETURN:
-        case SDLK_KP_ENTER:
+        case Gosu::kbReturn:
+        case Gosu::kbEnter:
             optionChosen();
             break;
-    }
-}
-
-void StateMainMenu::mouseButtonDown(Uint8 button)
-{
-    if (button == SDL_BUTTON_LEFT)
-    {
-
-        // Get mouse vertical position
-        int mY = mGame->getMouseY();
-
-        if (mY >= mMenuYStart && mY <= mMenuYEnd)
-        {
-            optionChosen();
+        
+        case Gosu::msLeft: {
+            // Get mouse vertical position
+            int mY = mGame->input().mouseY();
+            
+            if (mY >= mMenuYStart && mY <= mMenuYEnd)
+            {
+                optionChosen();
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 #ifndef _PARTICULAS_H_
 #define _PARTICULAS_H_
 
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 #include "Animation.h"
 #include "log.h"
@@ -13,13 +13,13 @@
 
 #define lim 0.70
 
-namespace GoSDL {
+namespace Gosu {
     class Window;
 }
 
 struct Particle{
 
-    Particle(float angle, float distance, float size, int totalSteps, GoSDL::Image img, SDL_Color color) :
+    Particle(float angle, float distance, float size, int totalSteps, Gosu::Image img, Gosu::Color color) :
         mAngle(angle), mDistance(distance), mSize(size), mTotalSteps(totalSteps), mImage(img), mColor(color), mCurrentStep(0), mPosX(0), mPosY(0)
     { }
 
@@ -31,21 +31,21 @@ struct Particle{
         float tempPos = Animacion::easeOutQuart(mCurrentStep, 0, 1, mTotalSteps);
 
         if (tempPos >= lim) {
-            mAlpha = 255 * (1 - (tempPos - lim) / (1 - lim));
+            mColor.setAlpha(255 * (1 - (tempPos - lim) / (1 - lim)));
         } else {
-            mAlpha = 255;
+            mColor.setAlpha(255);
         }
 
         mSizeCoef = mSize * (1 - tempPos);
 
-        mPosX = tempPos * mDistance * std::cos(mAngle * 3.141592 / 180) - mImage.getWidth() * mSizeCoef / 2;
-        mPosY = tempPos * mDistance * std::sin(mAngle * 3.141592 / 180) - mImage.getHeight() * mSizeCoef / 2;
+        mPosX = tempPos * mDistance * std::cos(mAngle * 3.141592 / 180) - mImage.width() * mSizeCoef / 2;
+        mPosY = tempPos * mDistance * std::sin(mAngle * 3.141592 / 180) - mImage.height() * mSizeCoef / 2;
 
 
     }
 
     void draw(int oX, int oY){
-        mImage.draw(oX + mPosX, oY + mPosY, 7, mSizeCoef, mSizeCoef, 0, 255, mColor);
+        mImage.draw(oX + mPosX, oY + mPosY, 7, mSizeCoef, mSizeCoef, mColor);
     }
 
     float estado(){
@@ -61,11 +61,9 @@ struct Particle{
 
     int mTotalSteps;
 
-    GoSDL::Image mImage;
+    Gosu::Image mImage;
 
-    SDL_Color mColor;
-
-    Uint8 mAlpha;
+    Gosu::Color mColor;
 
     int mCurrentStep;
 
@@ -80,14 +78,14 @@ struct Particle{
 class ParticleSystem{
 
 public:
-    ParticleSystem(GoSDL::Window * parentWindow,
+    ParticleSystem(Gosu::Window * parentWindow,
                       unsigned particleQuantity,
                       unsigned totalSteps,
                       int x,
                       int y,
                       unsigned distance=200,
                       float scale=1,
-                      SDL_Color color = {255, 255, 255, 255}) :
+                      Gosu::Color color = Gosu::Color::WHITE) :
 
         mParticleQuantity(particleQuantity),
         mTotalSteps(totalSteps),
@@ -97,12 +95,11 @@ public:
         mColor(color),
         mPosX(x),
         mPosY(y),
-        mActive(true)
-    {
+        mActive(true),
         // Load the images for the particles
-        mImgParticle1.setWindowAndPath(parentWindow, "media/partc1.png");
-        mImgParticle2.setWindowAndPath(parentWindow, "media/partc2.png");
-
+        mImgParticle1(L"media/partc1.png"),
+        mImgParticle2(L"media/partc2.png")
+    {
         // Reserve the space for the particles
         mParticleVector.reserve(mParticleQuantity);
 
@@ -152,10 +149,10 @@ private:
     float mScale;
 
     /// Color de las partículas
-    SDL_Color mColor;
+    Gosu::Color mColor;
 
     /// Imágenes de las partículas
-    GoSDL::Image mImgParticle1, mImgParticle2;
+    Gosu::Image mImgParticle1, mImgParticle2;
 
     /// Contenedor para las partículas
     vector<Particle> mParticleVector;

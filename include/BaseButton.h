@@ -31,7 +31,8 @@ using namespace std;
 
 // #include "resManager.h"
 #include "log.h"
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
+#include <memory>
 
 /**
  * @class BaseButton
@@ -49,9 +50,9 @@ class BaseButton{
 public:
 
     BaseButton();
-
-    void set (GoSDL::Window * parentWindow, std::string caption, std::string iconPath);
-    void setText(std::string caption);
+    
+    void set(Gosu::Window * parentWindow, std::wstring caption, std::wstring iconPath);
+    void setText(std::wstring caption);
 
     void draw(int x, int y, double z);
 
@@ -69,18 +70,18 @@ public:
 private:
 
     /// Parent window
-    GoSDL::Window * mParentWindow;
+    Gosu::Window * mParentWindow;
 
     /// Image for the background of the button
-    GoSDL::Image mImgBackground;
+    std::unique_ptr<Gosu::Image> mImgBackground;
 
     /// Image for the icon of the button, may be null.
-    GoSDL::Image mImgIcon;
+    std::unique_ptr<Gosu::Image> mImgIcon;
 
     bool mHasIcon;
 
     /// Font used for the button's label
-    GoSDL::Image mImgCaption, mImgCaptionShadow;
+    std::unique_ptr<Gosu::Image> mImgCaption, mImgCaptionShadow;
 
     /// Position of the label within the button
     int mTextHorizontalPosition;

@@ -1,8 +1,8 @@
 #include "GameHint.h"
 
-void GameHint::setWindow (GoSDL::Window * w)
+void GameHint::setWindow (Gosu::Window * w)
 {
-    mImgSelector.setWindowAndPath(w, "media/selector.png");
+    mImgSelector.reset(new Gosu::Image(L"media/selector.png"));
 }
 
 void GameHint::showHint(Coord location)
@@ -34,13 +34,13 @@ void GameHint::draw()
         float p1 = 1 - (float)mAnimationCurrentStep / mAnimationTotalSteps;
 
         // Get the location
-        float pX1 = 241 + mHintLocation.x * 65 - mImgSelector.getWidth() * (2 - p1) / 2 + 65 / 2;
-        float pY1 = 41 + mHintLocation.y * 65 - mImgSelector.getHeight() * (2 - p1) / 2 + 65 / 2;
+        float pX1 = 241 + mHintLocation.x * 65 - mImgSelector->width() * (2 - p1) / 2 + 65 / 2;
+        float pY1 = 41 + mHintLocation.y * 65 - mImgSelector->height() * (2 - p1) / 2 + 65 / 2;
 
         // Draw the hint
-        mImgSelector.draw(pX1, pY1, 10,
-          2 - p1, 2 - p1,
-          0, p1 * 255, {0, 255, 0, 255});
+        mImgSelector->draw(pX1, pY1, 10,
+            2 - p1, 2 - p1,
+            Gosu::Color(p1 * 255, 0, 255, 0));
     }
 
 }

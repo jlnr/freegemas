@@ -2,9 +2,9 @@
 #define _STATE_H_
 
 #include <iostream>
-#include <SDL.h>
 
 #include "log.h"
+#include <Gosu/Gosu.hpp>
 
 using namespace std;
 
@@ -44,15 +44,11 @@ public:
     virtual void draw() = 0;
 
     /// Triggers when a key is pressed
-    virtual void buttonDown(SDL_Keycode){ }
+    virtual void buttonDown(Gosu::Button btn) { }
 
     /// Triggers when a key is released
-    virtual void buttonUp(SDL_Keycode){ }
-
-    virtual void mouseButtonDown(Uint8) { }
-
-    virtual void mouseButtonUp(Uint8) { }
-
+    virtual void buttonUp(Gosu::Button btn) { }
+    
     /// Default destructor
     virtual ~State();
 };

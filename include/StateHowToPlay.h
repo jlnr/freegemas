@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "State.h"
-#include "go_image.h"
+#include <Gosu/Gosu.hpp>
 
 class TextBlock;
 class Game;
@@ -17,21 +17,17 @@ public:
     void update();
     void draw();
 
-    void buttonDown (SDL_Keycode button);
-    void mouseButtonDown (Uint8 button);
+    void buttonDown(Gosu::Button btn);
 
     ~StateHowtoplay();
 
 private:
-    GoSDL::Image mImgBackground;
+    Gosu::Image mImgBackground;
 
-    GoSDL::Image mImgTitle;
-    GoSDL::Image mImgTitleShadow;
-    GoSDL::Image mImgSubtitle;
-    GoSDL::Image mImgSubtitleShadow;
+    Gosu::Image mImgTitle;
+    Gosu::Image mImgSubtitle;
 
-    GoSDL::Image mImgBodyText;
-    GoSDL::Image mImgBodyTextShadow;
+    Gosu::Image mImgBodyText;
 };
 
 #endif /* _STATEHOWTOPLAY_H_ */
