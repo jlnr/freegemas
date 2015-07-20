@@ -50,6 +50,30 @@ void Game::buttonUp (Gosu::Button button)
         mCurrentState -> buttonUp(button);
 }
 
+void Game::touchBegan(Gosu::Touch touch)
+{
+    if (mCurrentState)
+        mCurrentState -> touchBegan(touch);
+}
+
+void Game::touchMoved(Gosu::Touch touch)
+{
+    if (mCurrentState)
+        mCurrentState -> touchMoved(touch);
+}
+
+void Game::touchEnded(Gosu::Touch touch)
+{
+    if (mCurrentState)
+        mCurrentState -> touchEnded(touch);
+}
+
+void Game::touchCancelled(Gosu::Touch touch)
+{
+    if (mCurrentState)
+        mCurrentState -> touchCancelled(touch);
+}
+
 void Game::changeState(string S)
 {
     if(S == mCurrentStateString)

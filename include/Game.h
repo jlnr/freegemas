@@ -14,14 +14,18 @@ class Game : public Gosu::Window
 
 public:
     Game ();
-    ~Game();
+    ~Game() override;
 
-    void update();
+    void update() override;
 
-    void draw();
+    void draw() override;
 
-    void buttonDown(Gosu::Button button);
-    void buttonUp(Gosu::Button button);
+    void buttonDown(Gosu::Button button) override;
+    void buttonUp(Gosu::Button button) override;
+    void touchBegan(Gosu::Touch touch) override;
+    void touchMoved(Gosu::Touch touch) override;
+    void touchEnded(Gosu::Touch touch) override;
+    void touchCancelled(Gosu::Touch touch) override;
 
     void changeState(std::string S);
     
