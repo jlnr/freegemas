@@ -37,7 +37,7 @@ private:
     std::string mCurrentStateString;
 
     Gosu::Image mMouseCursor;
-
+    void * mMouseSimulatingTouch = nullptr;
 };
 
 #endif /* _GAME_H_ */

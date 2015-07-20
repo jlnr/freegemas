@@ -17,6 +17,8 @@ Game::Game () :
     setCaption(L"FreeGemas");
     
     changeState("stateMainMenu");
+    
+    mMouseSimulatingTouch = nullptr;
 }
 
 Game::~Game()
@@ -32,7 +34,9 @@ void Game::update ()
 
 void Game::draw ()
 {
+    #ifndef GOSU_IS_MOBILE
     mMouseCursor.draw(input().mouseX(), input().mouseY(), 999);
+    #endif
 
     if (mCurrentState)
         mCurrentState -> draw();
@@ -52,26 +56,32 @@ void Game::buttonUp (Gosu::Button button)
 
 void Game::touchBegan(Gosu::Touch touch)
 {
-    if (mCurrentState)
-        mCurrentState -> touchBegan(touch);
+    if (mCurrentState && mMouseSimulatingTouch == nullptr) {
+        mMouseSimulatingTouch = touch.id;
+        input().setMousePosition(touch.x, touch.y);
+        mCurrentState->buttonDown(Gosu::msLeft);
+    }
 }
 
 void Game::touchMoved(Gosu::Touch touch)
 {
-    if (mCurrentState)
-        mCurrentState -> touchMoved(touch);
+    if (mCurrentState && mMouseSimulatingTouch == touch.id) {
+        input().setMousePosition(touch.x, touch.y);
+    }
 }
 
 void Game::touchEnded(Gosu::Touch touch)
 {
-    if (mCurrentState)
-        mCurrentState -> touchEnded(touch);
+    if (mCurrentState && mMouseSimulatingTouch == touch.id) {
+        input().setMousePosition(touch.x, touch.y);
+        mCurrentState->buttonUp(Gosu::msLeft);
+        mMouseSimulatingTouch = nullptr;
+    }
 }
 
 void Game::touchCancelled(Gosu::Touch touch)
 {
-    if (mCurrentState)
-        mCurrentState -> touchCancelled(touch);
+    touchEnded(touch);
 }
 
 void Game::changeState(string S)

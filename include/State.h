@@ -56,11 +56,6 @@ public:
     /// Triggers when a key is released
     virtual void buttonUp(Gosu::Button btn) { }
 
-    virtual void touchBegan(Gosu::Touch touch) { }
-    virtual void touchMoved(Gosu::Touch touch) { }
-    virtual void touchEnded(Gosu::Touch touch) { }
-    virtual void touchCancelled(Gosu::Touch touch) { }
-    
     /// Default destructor
     virtual ~State();
 };

@@ -271,6 +271,7 @@ void GameBoard::draw()
     int mX = (int) mGame -> input().mouseX();
     int mY = (int) mGame -> input().mouseY();
 
+    #ifndef GOSU_IS_MOBILE
     // Draw the selector if the mouse is over a gem
     if (overGem(mX, mY) )
     {
@@ -280,6 +281,7 @@ void GameBoard::draw()
             41 + getCoord(mX, mY).y * 65,
             4);
     }
+    #endif
 
     // Draw the selector if a gem has been selected
     if (mState == eGemSelected)

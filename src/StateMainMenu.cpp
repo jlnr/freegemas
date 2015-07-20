@@ -91,8 +91,10 @@ void StateMainMenu::draw(){
 
     }
 
+    #ifndef GOSU_IS_MOBILE
     // Draw the menu highlighting
     mImgHighl.draw(266, mMenuYStart + 5 + mMenuSelectedOption * mMenuYGap, 2);
+    #endif
 
     // Draw the jewel animation
     mJewelAnimation.draw();
