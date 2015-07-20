@@ -4,15 +4,21 @@ PODS:
   - Gosu/libogg (0.0.1)
   - Gosu/libvorbis (0.0.1):
     - Gosu/libogg
+  - Gosu/MobileGosu (0.0.1):
+    - Gosu/libvorbis
+  - Gosu/MobileGosuMain (0.0.1):
+    - Gosu/MobileGosu
 
 DEPENDENCIES:
   - Gosu/Gosu (from `../../Gosu/Gosu`)
+  - Gosu/MobileGosu (from `../../Gosu/Gosu`)
+  - Gosu/MobileGosuMain (from `../../Gosu/Gosu`)
 
 EXTERNAL SOURCES:
   Gosu:
     :path: ../../Gosu/Gosu
 
 SPEC CHECKSUMS:
-  Gosu: fbe4335f89afe0d0193cf8e66f00d0d8bc0dd5ae
+  Gosu: 263141022d45a180e9d0ef25e2adf11fb7158cfc
 
 COCOAPODS: 0.38.0

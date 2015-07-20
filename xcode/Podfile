@@ -1,5 +1,13 @@
 target 'FreeGemas', :exclusive => true do
   platform :osx, '10.7'
-
+  
   pod 'Gosu/Gosu', :path => '../../Gosu/Gosu'
+end
+
+
+target 'MobileFreeGemas', :exclusive => true do
+  platform :ios, '5.1.1'
+  
+  pod 'Gosu/MobileGosu', :path => '../../Gosu/Gosu'
+  pod 'Gosu/MobileGosuMain', :path => '../../Gosu/Gosu'
 end
