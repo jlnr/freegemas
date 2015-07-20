@@ -155,7 +155,7 @@ private:
     Gosu::Image mImgParticle1, mImgParticle2;
 
     /// Contenedor para las partículas
-    vector<Particle> mParticleVector;
+    std::vector<Particle> mParticleVector;
 
     /// Posición donde se debe pintar
     int mPosX, mPosY;

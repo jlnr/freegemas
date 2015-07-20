@@ -117,10 +117,10 @@ private:
     int mMultiplier = 1;
 
     /// Group of floating scores. There may be some at the same time.
-    vector<FloatingScore> mFloatingScores;
+    std::vector<FloatingScore> mFloatingScores;
 
     /// Group of particle systems
-    vector<ParticleSystem> mParticleSet;
+    std::vector<ParticleSystem> mParticleSet;
 
     /// Reference to the score table
     std::shared_ptr<ScoreTable> scoreTable;

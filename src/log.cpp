@@ -1,5 +1,8 @@
 #include "log.h"
 
+using namespace std;
+
+
 string Log::ToString(TLogLevel T){
     switch(T){
     case logERROR:

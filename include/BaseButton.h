@@ -27,7 +27,6 @@
 #define _BASEBUTTON_
 
 #include <string>
-using namespace std;
 
 // #include "resManager.h"
 #include "log.h"

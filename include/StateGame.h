@@ -31,7 +31,6 @@
 #include <utility>
 #include <memory>
 #include <set>
-using namespace std;
 
 #include <Gosu/Gosu.hpp>
 

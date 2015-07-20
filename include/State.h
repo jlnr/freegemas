@@ -6,8 +6,6 @@
 #include "log.h"
 #include <Gosu/Gosu.hpp>
 
-using namespace std;
-
 class Game;
 
 /**

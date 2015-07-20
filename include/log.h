@@ -32,8 +32,6 @@
 #include <cstdio>
 #include <string>
 
-using namespace std;
-
 /// Añade Función:(Archivo: linea) desde donde fué llamada.
 #define LOC()  string(__FUNCTION__) + " :(" + __FILE__ + ":" +  std::to_string(__LINE__) + ")  " 
 //#define LOC()  << __FUNCTION__ << " :(" << __FILE__ << ":" <<  __LINE__ << ")  " 
@@ -83,7 +81,7 @@ public:
      * @return Cadena con el nivel escrito.
      *
      */
-    static string ToString(TLogLevel T);
+    static std::string ToString(TLogLevel T);
 
     /**
      * @brief Devuelve una cadena con el texto de log estándar para constructores.
@@ -93,7 +91,7 @@ public:
      * @return Cadena con el texto para hacer log de la construcción
      *
      */
-    static string CON(string s);
+    static std::string CON(std::string s);
 
     /** 
      * @brief Devuelve una cadena con el texto de log estándar para destructores.
@@ -103,7 +101,7 @@ public:
      * @return Cadena con el texto para hacer log de la destrucción.
      *
      */
-    static string DES(string s);
+    static std::string DES(std::string s);
 
     static bool output;
 
@@ -117,16 +115,16 @@ public:
 
     /// Constantes de cadena con códigos de colores para terminales UNIX. No se
     /// ha probado en otros sistemas.
-    static string cRed, cGreen, cBlue, cYellow, cPurple;
+    static std::string cRed, cGreen, cBlue, cYellow, cPurple;
 
     /// Colores en negrita
-    static string nRed, nGreen, nBlue, nYellow, nPurple;
+    static std::string nRed, nGreen, nBlue, nYellow, nPurple;
 
     /// Colores en el fondo
-    static string bRed, bGreen, bBlue, bYellow, bPurple;
+    static std::string bRed, bGreen, bBlue, bYellow, bPurple;
 
     // Default color
-    static string cDef;
+    static std::string cDef;
     //@}
 
 protected:

@@ -516,7 +516,7 @@ void GameBoard::mouseButtonUp(int mX, int mY)
 void GameBoard::showHint ()
 {
     // Get possible hint locations
-    vector<Coord> hintLocations = mBoard.solutions();
+    std::vector<Coord> hintLocations = mBoard.solutions();
 
     // Start hint animation
     mHint.showHint(hintLocations[0]);

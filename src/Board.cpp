@@ -4,6 +4,9 @@
 #include <ctime>
 #include <iostream>
 
+using namespace std;
+
+
 Board::Board()
 {
     lDEBUG << Log::CON("Board");

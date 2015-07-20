@@ -27,7 +27,6 @@
 #define _FLOATINGSCORE_H_
 
 #include <string>
-using namespace std;
 
 #include "log.h"
 #include <Gosu/Gosu.hpp>

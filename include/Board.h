@@ -2,7 +2,6 @@
 #define _BOARD_H_
 
 #include <array>
-using namespace std;
 
 #include "log.h"
 #include "Square.h"
@@ -42,7 +41,7 @@ public:
     MultipleMatch check();
 
     /// Checks if current Board.has any possible valid movement
-    vector<Coord> solutions();
+    std::vector<Coord> solutions();
 
     /// Resets squares' animations
     void endAnimations();
@@ -50,7 +49,7 @@ public:
     /// Matrix of squares
     std::array< std::array<Square, 8>, 8> squares;
 
-    friend ostream& operator <<(ostream& out, Board & B);
+    friend std::ostream& operator <<(std::ostream& out, Board & B);
 };
 
 #endif

@@ -5,6 +5,8 @@
 #include "StateHowToPlay.h"
 #include "StateGame.h"
 
+using namespace std;
+
 
 Game::Game () :
     Gosu::Window(800, 600),
@@ -56,17 +58,17 @@ void Game::changeState(string S)
     }
     else if(S == "stateMainMenu")
     {
-        mCurrentState = std::make_shared<StateMainMenu>(this);
+        mCurrentState = make_shared<StateMainMenu>(this);
         mCurrentStateString = "stateMainMenu";
     }
     else if(S == "stateGame")
     {
-        mCurrentState = std::make_shared<StateGame>(this);
+        mCurrentState = make_shared<StateGame>(this);
         mCurrentStateString = "estadoGame";
     }
     else if(S == "stateHowtoplay")
     {
-        mCurrentState = std::make_shared<StateHowtoplay>(this);
+        mCurrentState = make_shared<StateHowtoplay>(this);
         mCurrentStateString = "stateHowtoplay";
     }
     else if(S == "stateQuit")

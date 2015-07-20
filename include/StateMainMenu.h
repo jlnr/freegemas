@@ -9,8 +9,6 @@
 
 #include <vector>
 
-using namespace std;
-
 class Game;
 
 /**
@@ -85,8 +83,8 @@ private:
     int mMenuSelectedOption;
 
     /// List of menu options.
-    vector<string> mMenuTargets;
-    vector<Gosu::Image> mMenuRenderedTexts;
+    std::vector<std::string> mMenuTargets;
+    std::vector<Gosu::Image> mMenuRenderedTexts;
 
     /// It gets executed when the user choses an option. It changes the state
     ///  to the proper one.
