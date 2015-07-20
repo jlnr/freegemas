@@ -5,17 +5,7 @@
 #include "inter.h"
 
 #include <cmath>
-#include <tuple>
 
-
-template <typename T, typename R>
-
-T clamp(T v, R bottom, R top)
-{
-    if(v > top) return top;
-    if(v < bottom) return bottom;
-    return v;
-}
 
 StateMainMenu::StateMainMenu(Game * p) : State(p),
     // Init background image
@@ -82,14 +72,14 @@ void StateMainMenu::draw(){
     mImgBackground.draw(0, 0, 1);
 
     // Calculate the alpha value for the logo
-    int logoAlfa = clamp( (int)(255 * (float)mAnimationCurrentStep / mAnimationLogoSteps),
+    int logoAlfa = Gosu::clamp( (int)(255 * (float)mAnimationCurrentStep / mAnimationLogoSteps),
                           0, 255);
 
     // Draw the logo
     mImgLogo.draw(86, 0, 2, 1, 1, Gosu::Color(logoAlfa, 255, 255, 255));
 
     // Loop to draw the menu items
-    for(size_t i = 0, s = (int) mMenuTargets.size(); i < s; ++i)
+    for(size_t i = 0, s = mMenuTargets.size(); i < s; ++i)
     {
         // Calculate the horizontal and vertical positions
 		int posX = std::round(800 / 2 - mMenuRenderedTexts[i].width() / 2),
@@ -106,7 +96,6 @@ void StateMainMenu::draw(){
 
     // Draw the jewel animation
     mJewelAnimation.draw();
-    //*/
 }
 
 void StateMainMenu::buttonDown(Gosu::Button btn)

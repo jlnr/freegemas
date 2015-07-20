@@ -21,6 +21,15 @@ class Game;
 */
 
 class State{
+
+private:
+    // Avoid slicing by preventing this class from being copied or assigned.
+    // This should be done for all base classes.
+    State(State&&) = delete;
+    State& operator=(State&&) = delete;
+    State(const State&) = delete;
+    State& operator=(const State&) = delete;
+    
 protected:
     /**
      * @brief Reference to the game's main class

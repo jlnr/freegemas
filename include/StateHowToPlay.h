@@ -14,12 +14,12 @@ public:
 
     StateHowtoplay(Game * p);
 
-    void update();
-    void draw();
+    void update() override;
+    void draw() override;
 
-    void buttonDown(Gosu::Button btn);
+    void buttonDown(Gosu::Button btn) override;
 
-    ~StateHowtoplay();
+    ~StateHowtoplay() override;
 
 private:
     Gosu::Image mImgBackground;

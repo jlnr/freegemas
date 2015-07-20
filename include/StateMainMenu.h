@@ -34,10 +34,10 @@ public:
     StateMainMenu(Game * p);
 
     /// It controls the animations and the transitions
-    void update();
+    void update() override;
 
     /// Draws the different elements
-    void draw();
+    void draw() override;
 
     /**
      * @brief It gets called whenever the user presses a button.
@@ -46,9 +46,9 @@ public:
      * well as the mouse.
      *
      */
-    void buttonDown(Gosu::Button btn);
+    void buttonDown(Gosu::Button btn) override;
 
-    ~StateMainMenu();
+    ~StateMainMenu() override;
 
 private:
 

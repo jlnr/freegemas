@@ -62,13 +62,13 @@ public:
 
     /// Creates a new StateGame, initializing the loading screen
     StateGame(Game * p);
-    ~StateGame();
+    ~StateGame() override;
 
-    void update();
-    void draw();
+    void update() override;
+    void draw() override;
 
-    void buttonDown(Gosu::Button btn);
-    void buttonUp(Gosu::Button btn);
+    void buttonDown(Gosu::Button btn) override;
+    void buttonUp(Gosu::Button btn) override;
 
 private:
 
