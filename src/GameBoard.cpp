@@ -372,7 +372,7 @@ void GameBoard::draw()
             // When the board is first appearing, all the gems are falling
             if (mState == eBoardAppearing)
             {
-                imgY = Animacion::easeOutQuad(
+                imgY = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posY + mBoard.squares[i][j].origY * 65),
                         float(mBoard.squares[i][j].destY * 65),
@@ -385,13 +385,13 @@ void GameBoard::draw()
                 // If the current gem is the first selected square
                 if (mSelectedSquareFirst.equals(i,j))
                 {
-                    imgX = Animacion::easeOutQuad(
+                    imgX = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posX + i * 65),
                         float((mSelectedSquareSecond.x - mSelectedSquareFirst.x) * 65),
                         float(mAnimationShortTotalSteps));
 
-                    imgY = Animacion::easeOutQuad(
+                    imgY = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posY + j * 65),
                         float((mSelectedSquareSecond.y - mSelectedSquareFirst.y) * 65),
@@ -401,13 +401,13 @@ void GameBoard::draw()
                 // If the current gem is the second selected square
                 else if (mSelectedSquareSecond.equals(i,j))
                 {
-                    imgX = Animacion::easeOutQuad(
+                    imgX = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posX + i * 65),
                         float((mSelectedSquareFirst.x - mSelectedSquareSecond.x) * 65),
                         float(mAnimationShortTotalSteps));
 
-                    imgY = Animacion::easeOutQuad(
+                    imgY = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posY + j * 65),
                         float((mSelectedSquareFirst.y - mSelectedSquareSecond.y) * 65),
@@ -429,7 +429,7 @@ void GameBoard::draw()
             {
                 if (mBoard.squares[i][j].mustFall)
                 {
-                    imgY = Animacion::easeOutQuad(
+                    imgY = Animation::easeOutQuad(
                         float(mAnimationCurrentStep),
                         float(posY + mBoard.squares[i][j].origY * 65),
                         float(mBoard.squares[i][j].destY * 65),
@@ -440,7 +440,7 @@ void GameBoard::draw()
             // When there are no more matching movements, the board disappears
             else if (mState == eBoardDisappearing || mState == eTimeFinished)
             {
-                imgY = Animacion::easeInQuad(
+                imgY = Animation::easeInQuad(
                         float(mAnimationCurrentStep),
                         float(posY + mBoard.squares[i][j].origY * 65),
                         float(mBoard.squares[i][j].destY * 65),

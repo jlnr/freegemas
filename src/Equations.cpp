@@ -29,21 +29,21 @@
 // ######################################################
 // Ecuaciones de tweening
 
-float Animacion::easeLinear(float t, float b, float c, float d){
+float Animation::easeLinear(float t, float b, float c, float d){
     return c * t / d + b;
 }
 
-float Animacion::easeInQuad (float t, float b, float c, float d) {
+float Animation::easeInQuad (float t, float b, float c, float d) {
     t/=d;
     return c*t*t + b;
 }
 
-float Animacion::easeOutQuad(float t, float b, float c, float d) {
+float Animation::easeOutQuad(float t, float b, float c, float d) {
     t/=d;
     return -c *(t)*(t-2) + b;
 }
 
-float Animacion::easeInOutQuad(float t, float b, float c, float d) {
+float Animation::easeInOutQuad(float t, float b, float c, float d) {
     t /= d/2;
     if (t < 1){
 	return c/2*t*t + b;
@@ -53,17 +53,17 @@ float Animacion::easeInOutQuad(float t, float b, float c, float d) {
     }
 }
 
-float Animacion::easeInCubic(float t, float b, float c, float d) {
+float Animation::easeInCubic(float t, float b, float c, float d) {
     t/=d;
     return c*(t)*t*t + b;
 }
 
-float Animacion::easeOutCubic(float t, float b, float c, float d) {
+float Animation::easeOutCubic(float t, float b, float c, float d) {
     t=t/d-1;
     return c*(t*t*t + 1) + b;
 }
 
-float Animacion::easeInOutCubic(float t, float b, float c, float d) {
+float Animation::easeInOutCubic(float t, float b, float c, float d) {
     t/=d/2;
     if ((t) < 1){
 	return c/2*t*t*t + b;
@@ -74,17 +74,17 @@ float Animacion::easeInOutCubic(float t, float b, float c, float d) {
 }
 
 
-float Animacion::easeInQuart(float t, float b, float c, float d) {
+float Animation::easeInQuart(float t, float b, float c, float d) {
     t/=d;
     return c*(t)*t*t*t + b;
 }
 
-float Animacion::easeOutQuart(float t, float b, float c, float d) {
+float Animation::easeOutQuart(float t, float b, float c, float d) {
     t=t/d-1;
     return -c * ((t)*t*t*t - 1) + b;
 }
 
-float Animacion::easeInOutQuart(float t, float b, float c, float d) {
+float Animation::easeInOutQuart(float t, float b, float c, float d) {
     t/=d/2;
     if ((t) < 1){
 	return c/2*t*t*t*t + b;
@@ -94,7 +94,7 @@ float Animacion::easeInOutQuart(float t, float b, float c, float d) {
     }
 }
 
-float Animacion::easeOutBack(float t, float b, float c, float d){
+float Animation::easeOutBack(float t, float b, float c, float d){
 //    float s = 1.70158;
     float s = 1.3;
     t = t/d - 1;

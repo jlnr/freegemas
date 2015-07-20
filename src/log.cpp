@@ -17,23 +17,23 @@ string Log::ToString(TLogLevel T){
         break;
     }
 }
-string Log::cRojo = "\033[31m";
-string Log::cVerde =  "\033[32m";
-string Log::cAmar = "\033[33m";
-string Log::cAzul = "\033[34m";
-string Log::cLila = "\033[35m";
+string Log::cRed = "\033[31m";
+string Log::cGreen =  "\033[32m";
+string Log::cYellow = "\033[33m";
+string Log::cBlue = "\033[34m";
+string Log::cPurple = "\033[35m";
 
-string Log::nRojo = "\033[01;31m";
-string Log::nVerde =  "\033[01;32m";
-string Log::nAmar = "\033[01;33m";
-string Log::nAzul = "\033[01;34m";
-string Log::nLila = "\033[01;35m";
+string Log::nRed = "\033[01;31m";
+string Log::nGreen =  "\033[01;32m";
+string Log::nYellow = "\033[01;33m";
+string Log::nBlue = "\033[01;34m";
+string Log::nPurple = "\033[01;35m";
 
-string Log::bRojo = "\033[1m\033[01;41m";
-string Log::bVerde =  "\033[1m\033[01;42m";
-string Log::bAmar = "\033[1m\033[01;43m";
-string Log::bAzul = "\033[1m\033[01;44m";
-string Log::bLila = "\033[1m\033[01;45m";
+string Log::bRed = "\033[1m\033[01;41m";
+string Log::bGreen =  "\033[1m\033[01;42m";
+string Log::bYellow = "\033[1m\033[01;43m";
+string Log::bBlue = "\033[1m\033[01;44m";
+string Log::bPurple = "\033[1m\033[01;45m";
 
 
 
@@ -41,11 +41,11 @@ string Log::cDef = "\033[00m";
 
 
 string Log::CON(string s){
-    return cVerde + "[++ Constructor] " + s + cDef;
+    return cGreen + "[++ Constructor] " + s + cDef;
 }
 
 string Log::DES(string s){
-    return cRojo + "[-- Destructor] " + s + cDef;
+    return cRed + "[-- Destructor] " + s + cDef;
 }
 
 std::ostringstream& Log::Get(TLogLevel level)
@@ -57,10 +57,10 @@ std::ostringstream& Log::Get(TLogLevel level)
 
 Log::~Log(){
     os << Log::cDef << std::endl;
-    if(salida){
+    if(output){
         fprintf(stderr, "%s", os.str().c_str());
         fflush(stderr);
     }
 }
 
-bool Log::salida = true;
+bool Log::output = true;

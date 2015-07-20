@@ -1,99 +1,99 @@
 #include "Animation.h"
 #include "log.h"
 
-Animacion::Animacion(int n, int d, tipoAnim anim, int e) :
-numAttr(n), duracion(d), esperaInicial(e), time(0){
+Animation::Animation(int n, int d, AnimationType anim, int e) :
+numAttr(n), duration(d), initialDelay(e), time(0){
 
     // Guardamos la memoria para los diferentes vectores
-    inicial = new int[numAttr];
+    initial = new int[numAttr];
     final = new int[numAttr];
     change = new int[numAttr];
-    actual = new float[numAttr];
+    current = new float[numAttr];
 
     // Asigna valores perdeterminados a los vectores
     for (int i = 0; i < n; ++i)
     {
-       inicial[i] = final[i] = change[i] = actual[i] = 0;
-   }
+       initial[i] = final[i] = change[i] = current[i] = 0;
+    }
 
     // Define el tipo de animación
-   setTipoAnimacion(anim);
+   setAnimationType(anim);
 
    lDEBUG << Log::CON("Animación") << " . " << n << " parámetros.";
 }
 
 
-Animacion::~Animacion(){
-    delete inicial;
+Animation::~Animation(){
+    delete initial;
     delete final;
     delete change;
-    delete actual;
+    delete current;
 
     lDEBUG << Log::DES("Animación");
 }
 
-void Animacion::setTipoAnimacion(tipoAnim a){
+void Animation::setAnimationType(AnimationType a){
     anim = a;
 
     // Quad
     if(anim == tEaseInQuad){
-       puntFun = &Animacion::easeInQuad;
+       puntFun = &Animation::easeInQuad;
    }
    else if(anim == tEaseOutQuad){
-       puntFun = &Animacion::easeOutQuad;
+       puntFun = &Animation::easeOutQuad;
    }
    else if(anim == tEaseInOutQuad){
-       puntFun = &Animacion::easeInOutQuad;
+       puntFun = &Animation::easeInOutQuad;
    }
 
     // Cubic
    else if(anim == tEaseInCubic){
-       puntFun = &Animacion::easeInCubic;
+       puntFun = &Animation::easeInCubic;
    }
    else if(anim == tEaseOutCubic){
-       puntFun = &Animacion::easeOutCubic;
+       puntFun = &Animation::easeOutCubic;
    }
    else if(anim == tEaseInOutCubic){
-       puntFun = &Animacion::easeInOutCubic;
+       puntFun = &Animation::easeInOutCubic;
    }
 
     // Quart
    else if(anim == tEaseInQuart){
-       puntFun = &Animacion::easeInQuart;
+       puntFun = &Animation::easeInQuart;
    }
    else if(anim == tEaseOutQuart){
-       puntFun = &Animacion::easeOutQuart;
+       puntFun = &Animation::easeOutQuart;
    }
    else if(anim == tEaseInOutQuart){
-       puntFun = &Animacion::easeInOutQuart;
+       puntFun = &Animation::easeInOutQuart;
    }
 
     // Back
    else if(anim == tEaseOutBack){
-       puntFun = &Animacion::easeOutBack;
+       puntFun = &Animation::easeOutBack;
    }
 
     // Linear y default
    else{
-       puntFun = &Animacion::easeLinear;
+       puntFun = &Animation::easeLinear;
    }
 
 }
 
-void Animacion::update(bool a){
+void Animation::update(bool a){
 
-    if(time - esperaInicial > duracion){
+    if(time - initialDelay > duration){
        for (int i = 0; i < numAttr; ++i)
        {
-           actual[i] = final[i];
+           current[i] = final[i];
        }
        return;
    }
 
-   else if(time >= esperaInicial)
+   else if(time >= initialDelay)
    {
        for (int i = 0; i < numAttr; ++i){
-           actual[i] = (*puntFun)(time - esperaInicial, inicial[i], change[i], duracion);
+           current[i] = (*puntFun)(time - initialDelay, initial[i], change[i], duration);
        }
 
    }
@@ -103,53 +103,53 @@ void Animacion::update(bool a){
 
 
 
-float Animacion::get(int i){
+float Animation::get(int i){
     if(i < numAttr){
-       return actual[i];
+       return current[i];
    }else{
        return 0;
    }
 }
 
-void Animacion::setInicial(int i, int v){
+void Animation::setInitial(int i, int v){
     if(i < numAttr){
-       inicial[i] = v;
+       initial[i] = v;
        change[i] = final[i] - v;
-       actual[i] = v;
+       current[i] = v;
    }
 }
 
-void Animacion::setFinal(int i, int v){
+void Animation::setFinal(int i, int v){
     if(i < numAttr){
        final[i] = v;
-       change[i] = v - inicial[i];
+       change[i] = v - initial[i];
    }
 }
 
-void Animacion::set(int i, int v1, int v2){
+void Animation::set(int i, int v1, int v2){
     if(i < numAttr){
-       inicial[i] = v1;
+       initial[i] = v1;
        final[i] = v2;
        change[i] = v2 - v1;
-       actual[i] = v1;
+       current[i] = v1;
    }
 }
 
-void Animacion::reverse(){
+void Animation::reverse(){
     int a;
     for (int i = 0; i < numAttr; ++i)
     {
-       a = inicial[i];
-       inicial[i] = final[i];
+       a = initial[i];
+       initial[i] = final[i];
        final[i] = a;
-       change[i] = final[i] - inicial[i];
+       change[i] = final[i] - initial[i];
    }
 
 }
 
-void Animacion::end() { time = duracion + esperaInicial; update(false); }
-void Animacion::init() { time = 0; }
-bool Animacion::finished(){
+void Animation::end() { time = duration + initialDelay; update(false); }
+void Animation::init() { time = 0; }
+bool Animation::finished(){
 /*
     int j = 0;
     for (int i = 0; i < numAttr; ++i)
@@ -158,5 +158,5 @@ bool Animacion::finished(){
     }
     return j == numAttr;  //*/
 
-    return time > duracion + esperaInicial;
+    return time > duration + initialDelay;
 }

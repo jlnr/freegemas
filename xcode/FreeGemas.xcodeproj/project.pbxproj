@@ -10,7 +10,7 @@
 		D495F6E81B5CFEC800632CBB /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D21B5CFEC800632CBB /* Animation.cpp */; };
 		D495F6E91B5CFEC800632CBB /* BaseButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D31B5CFEC800632CBB /* BaseButton.cpp */; };
 		D495F6EA1B5CFEC800632CBB /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D41B5CFEC800632CBB /* Board.cpp */; };
-		D495F6EB1B5CFEC800632CBB /* Ecuaciones.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D51B5CFEC800632CBB /* Ecuaciones.cpp */; };
+		D495F6EB1B5CFEC800632CBB /* Equations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D51B5CFEC800632CBB /* Equations.cpp */; };
 		D495F6EC1B5CFEC800632CBB /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D61B5CFEC800632CBB /* Game.cpp */; };
 		D495F6ED1B5CFEC800632CBB /* GameBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D71B5CFEC800632CBB /* GameBoard.cpp */; };
 		D495F6EE1B5CFEC800632CBB /* GameBoardSounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D81B5CFEC800632CBB /* GameBoardSounds.cpp */; };
@@ -61,7 +61,7 @@
 		D495F6D21B5CFEC800632CBB /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		D495F6D31B5CFEC800632CBB /* BaseButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseButton.cpp; sourceTree = "<group>"; };
 		D495F6D41B5CFEC800632CBB /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
-		D495F6D51B5CFEC800632CBB /* Ecuaciones.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ecuaciones.cpp; sourceTree = "<group>"; };
+		D495F6D51B5CFEC800632CBB /* Equations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Equations.cpp; sourceTree = "<group>"; };
 		D495F6D61B5CFEC800632CBB /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		D495F6D71B5CFEC800632CBB /* GameBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameBoard.cpp; sourceTree = "<group>"; };
 		D495F6D81B5CFEC800632CBB /* GameBoardSounds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameBoardSounds.cpp; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				D495F6D21B5CFEC800632CBB /* Animation.cpp */,
 				D495F6D31B5CFEC800632CBB /* BaseButton.cpp */,
 				D495F6D41B5CFEC800632CBB /* Board.cpp */,
-				D495F6D51B5CFEC800632CBB /* Ecuaciones.cpp */,
+				D495F6D51B5CFEC800632CBB /* Equations.cpp */,
 				D495F6D61B5CFEC800632CBB /* Game.cpp */,
 				D495F6D71B5CFEC800632CBB /* GameBoard.cpp */,
 				D495F6D81B5CFEC800632CBB /* GameBoardSounds.cpp */,
@@ -314,7 +314,7 @@
 				D495F6EF1B5CFEC800632CBB /* GameHint.cpp in Sources */,
 				D495F6E91B5CFEC800632CBB /* BaseButton.cpp in Sources */,
 				D495F6FC1B5CFEC800632CBB /* StateMainMenu.cpp in Sources */,
-				D495F6EB1B5CFEC800632CBB /* Ecuaciones.cpp in Sources */,
+				D495F6EB1B5CFEC800632CBB /* Equations.cpp in Sources */,
 				D495F7451B5D1B5F00632CBB /* inter.cpp in Sources */,
 				D495F6FB1B5CFEC800632CBB /* StateHowtoplay.cpp in Sources */,
 				D495F6F01B5CFEC800632CBB /* GameIndicators.cpp in Sources */,

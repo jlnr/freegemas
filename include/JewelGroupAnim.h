@@ -45,7 +45,7 @@ public:
 
             if(composedStep < animationTotalSteps){
                 imgGems[i].draw(posX[i],
-                                   Animacion::easeOutCubic(
+                                   Animation::easeOutCubic(
                                        (float) composedStep,
                                        600.f,
                                        (float) posFinalY - 600.f,

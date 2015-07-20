@@ -105,7 +105,7 @@ public:
      */
     static string DES(string s);
 
-    static bool salida;
+    static bool output;
 
     /**
      * @brief Vuelca el flujo con los mensajes de log en el destino indicado, por ahora la salida estándar.
@@ -117,13 +117,13 @@ public:
 
     /// Constantes de cadena con códigos de colores para terminales UNIX. No se
     /// ha probado en otros sistemas.
-    static string cRojo, cVerde, cAzul, cAmar, cLila;
+    static string cRed, cGreen, cBlue, cYellow, cPurple;
 
     /// Colores en negrita
-    static string nRojo, nVerde, nAzul, nAmar, nLila;
+    static string nRed, nGreen, nBlue, nYellow, nPurple;
 
     /// Colores en el fondo
-    static string bRojo, bVerde, bAzul, bAmar, bLila;
+    static string bRed, bGreen, bBlue, bYellow, bPurple;
 
     // Default color
     static string cDef;

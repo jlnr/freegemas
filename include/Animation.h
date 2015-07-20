@@ -1,5 +1,5 @@
 /**
- * @file animacion.h
+ * @file Animation.h
  * 
  * @author José Tomás Tocino García
  * @date 2010
@@ -26,8 +26,8 @@
 
 
 
-#ifndef _ANIMACION_H_
-#define _ANIMACION_H_
+#ifndef _ANIMATION_H_
+#define _ANIMATION_H_
 
 #include <cmath>
 #include <iostream>
@@ -35,7 +35,7 @@
 using namespace std;
 
 /**
- * @class Animacion
+ * @class Animation
  *
  * @brief Calcula y devuelve valores para realizar animaciones.
  *
@@ -45,7 +45,7 @@ using namespace std;
  le indicamos la duración de la animación, la ecuación a seguir (según queramos imitar
  un movimiento de aceleración o deceleración) y la espera inicial antes de comenzar la animación.
  \code
- Animacion miAnimacion (2, 30, Animacion::tEaseInQuad, 0);
+ Animation miAnimacion (2, 30, Animation::tEaseInQuad, 0);
  \endcode
 
  Seguidamente, por cada parámetro tendremos que indicar cuál es el valor inicial y final de la
@@ -75,16 +75,16 @@ using namespace std;
  */
 
 
-class Animacion{
+class Animation {
     
 public:
     /// Diferentes tipos de animaciones
-    enum tipoAnim {tEaseInQuad, tEaseOutQuad, tEaseInOutQuad,
+    enum AnimationType { tEaseInQuad, tEaseOutQuad, tEaseInOutQuad,
 		   tEaseInCubic, tEaseOutCubic, tEaseInOutCubic,
 		   tEaseInQuart, tEaseOutQuart, tEaseInOutQuart,
-		   tEaseOutBack, tLinear};
+		   tEaseOutBack, tLinear };
 
-    enum atribAnim{ tNada, tAlpha, tPos, tAlphaPos };
+    enum AnimationAttrib { tNone, tAlpha, tPos, tAlphaPos };
 
 private:
 
@@ -92,16 +92,16 @@ private:
     int numAttr;
 
     /// Duración de la animación
-    int duracion;
+    int duration;
 
     /// Espera inicial antes de iniciar la animación
-    int esperaInicial;
+    int initialDelay;
 
     /// Contador del tiempo pasado
     int time;
 
     /// Vector de posiciones iniciales
-    int * inicial;
+    int * initial;
 
     /// Vector de posiciones finales
     int * final;
@@ -110,10 +110,10 @@ private:
     int * change;
 
     /// Vector de posiciones actuales
-    float * actual;
+    float * current;
 
     /// Tipo de animación a realizar
-    tipoAnim anim;
+    AnimationType anim;
 
     /// Puntero a la función de animación
     float (*puntFun) (float, float, float, float);
@@ -131,7 +131,7 @@ public:
      *
      */
 
-    Animacion(int n, int d, tipoAnim anim = tEaseInQuad, int e = 0);
+    Animation(int n, int d, AnimationType anim = tEaseInQuad, int e = 0);
 
     ///@{
     ///@name Control del flujo de la animación
@@ -183,7 +183,7 @@ public:
      * @param v Valor inicial del atributo.
      *
      */
-    void setInicial(int i, int v);
+    void setInitial(int i, int v);
 
     /**
      * @brief Inicializa el valor final del atributo i-ésimo.
@@ -208,20 +208,20 @@ public:
      *
      * @param a Ecuación a asignar.
      */
-    void setTipoAnimacion(tipoAnim a);
+    void setAnimationType(AnimationType a);
 
     /**
      * @brief Asigna la duración de la animación.
      * @param d Duración de la animación.
      */
-    void setDuracion(int d) { duracion = d; }
+    void setDuration(int d) { duration = d; }
 
     /**
      * @brief Asigna el tiempo de espera de la animación.
      * @param e Tiempo de espera.
      */
 
-    void setEspera(int e) { esperaInicial = e; }
+    void setDelay(int e) { initialDelay = e; }
     ///@}
 
 
@@ -262,7 +262,7 @@ public:
     //@}
 
     /// Libera la memoria de los diferentes vectores.
-    ~Animacion();
+    ~Animation();
 };
 
 #endif /* _ANIMACION_H_ */

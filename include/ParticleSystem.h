@@ -28,7 +28,7 @@ struct Particle{
             mCurrentStep ++;
         }
 
-        float tempPos = Animacion::easeOutQuart(mCurrentStep, 0, 1, mTotalSteps);
+        float tempPos = Animation::easeOutQuart(mCurrentStep, 0, 1, mTotalSteps);
 
         if (tempPos >= lim) {
             mColor.setAlpha(255 * (1 - (tempPos - lim) / (1 - lim)));
