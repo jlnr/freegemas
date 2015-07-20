@@ -1,0 +1,18 @@
+PODS:
+  - Gosu/Gosu (0.0.1):
+    - Gosu/libvorbis
+  - Gosu/libogg (0.0.1)
+  - Gosu/libvorbis (0.0.1):
+    - Gosu/libogg
+
+DEPENDENCIES:
+  - Gosu/Gosu (from `../../Gosu/Gosu`)
+
+EXTERNAL SOURCES:
+  Gosu:
+    :path: ../../Gosu/Gosu
+
+SPEC CHECKSUMS:
+  Gosu: fbe4335f89afe0d0193cf8e66f00d0d8bc0dd5ae
+
+COCOAPODS: 0.38.0
