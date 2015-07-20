@@ -106,10 +106,10 @@ public:
         // Create the particles
         for (size_t i = 0; i < mParticleQuantity; ++i)
         {
-            mParticleVector.push_back(Particle(getRandomInt(0, 360),
-                                    getRandomFloat(0, 1) * mDistance,
-                                    getRandomFloat(0, mScale) + 1,
-                                    getRandomFloat(0.1, 1) * mTotalSteps,
+            mParticleVector.push_back(Particle(std::rand() % 360,
+                                    Gosu::random(0, 1) * mDistance,
+                                    Gosu::random(0, mScale) + 1,
+                                    Gosu::random(0.1, 1) * mTotalSteps,
                                     (rand() > RAND_MAX / 2 ? mImgParticle1 : mImgParticle2),
                                     mColor));
         }

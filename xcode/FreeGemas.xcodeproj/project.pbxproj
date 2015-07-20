@@ -23,7 +23,6 @@
 		D495F6FA1B5CFEC800632CBB /* StateGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E41B5CFEC800632CBB /* StateGame.cpp */; };
 		D495F6FB1B5CFEC800632CBB /* StateHowtoplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E51B5CFEC800632CBB /* StateHowtoplay.cpp */; };
 		D495F6FC1B5CFEC800632CBB /* StateMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E61B5CFEC800632CBB /* StateMainMenu.cpp */; };
-		D495F6FD1B5CFEC800632CBB /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E71B5CFEC800632CBB /* Util.cpp */; };
 		D495F7451B5D1B5F00632CBB /* inter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F7441B5D1B5F00632CBB /* inter.cpp */; };
 		D495F7471B5D2B5B00632CBB /* media in Resources */ = {isa = PBXBuildFile; fileRef = D495F7461B5D2B5B00632CBB /* media */; };
 		E79E4CD05BA717B8107B38A9 /* libPods-FreeGemas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA004F5D183C153331FCC6E5 /* libPods-FreeGemas.a */; };
@@ -57,7 +56,6 @@
 		D495F6CD1B5CFEC800632CBB /* StateGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateGame.h; sourceTree = "<group>"; };
 		D495F6CE1B5CFEC800632CBB /* StateHowToPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateHowToPlay.h; sourceTree = "<group>"; };
 		D495F6CF1B5CFEC800632CBB /* StateMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMainMenu.h; sourceTree = "<group>"; };
-		D495F6D01B5CFEC800632CBB /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		D495F6D21B5CFEC800632CBB /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		D495F6D31B5CFEC800632CBB /* BaseButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseButton.cpp; sourceTree = "<group>"; };
 		D495F6D41B5CFEC800632CBB /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 		D495F6E41B5CFEC800632CBB /* StateGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateGame.cpp; sourceTree = "<group>"; };
 		D495F6E51B5CFEC800632CBB /* StateHowtoplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateHowtoplay.cpp; sourceTree = "<group>"; };
 		D495F6E61B5CFEC800632CBB /* StateMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateMainMenu.cpp; sourceTree = "<group>"; };
-		D495F6E71B5CFEC800632CBB /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		D495F7441B5D1B5F00632CBB /* inter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inter.cpp; sourceTree = "<group>"; };
 		D495F7461B5D2B5B00632CBB /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; name = media; path = ../../media; sourceTree = "<group>"; };
 		EA004F5D183C153331FCC6E5 /* libPods-FreeGemas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeGemas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +152,6 @@
 				D495F6CD1B5CFEC800632CBB /* StateGame.h */,
 				D495F6CE1B5CFEC800632CBB /* StateHowToPlay.h */,
 				D495F6CF1B5CFEC800632CBB /* StateMainMenu.h */,
-				D495F6D01B5CFEC800632CBB /* Util.h */,
 			);
 			name = include;
 			path = ../../include;
@@ -180,7 +176,6 @@
 				D495F6E41B5CFEC800632CBB /* StateGame.cpp */,
 				D495F6E51B5CFEC800632CBB /* StateHowtoplay.cpp */,
 				D495F6E61B5CFEC800632CBB /* StateMainMenu.cpp */,
-				D495F6E71B5CFEC800632CBB /* Util.cpp */,
 				D495F7441B5D1B5F00632CBB /* inter.cpp */,
 			);
 			name = src;
@@ -320,7 +315,6 @@
 				D495F6F01B5CFEC800632CBB /* GameIndicators.cpp in Sources */,
 				D495F6E81B5CFEC800632CBB /* Animation.cpp in Sources */,
 				D495F6ED1B5CFEC800632CBB /* GameBoard.cpp in Sources */,
-				D495F6FD1B5CFEC800632CBB /* Util.cpp in Sources */,
 				D495F6F71B5CFEC800632CBB /* main.cpp in Sources */,
 				D495F6F81B5CFEC800632CBB /* ScoreTable.cpp in Sources */,
 				D495F6EC1B5CFEC800632CBB /* Game.cpp in Sources */,
