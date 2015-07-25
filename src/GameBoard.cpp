@@ -481,7 +481,7 @@ void GameBoard::mouseButtonDown(int mouseX, int mouseY)
         else if (mState == eGemSelected)
         {
             // If the newly clicked gem is a winning one
-            if (checkClickedSquare(mouseX, mouseY))
+            if (checkClickedSquare(getCoord(mouseX, mouseY), false))
             {
                 // Switch the state and reset the animation
                 mState = eGemSwitching;
@@ -506,7 +506,7 @@ void GameBoard::mouseButtonUp(int mX, int mY)
         Coord res = getCoord(mX, mY);
 
         // If the square is different from the previously selected one
-        if (res != mSelectedSquareFirst && checkClickedSquare(mX, mY))
+        if (res != mSelectedSquareFirst && checkClickedSquare(res, true))
         {
             // Switch the state and reset the animation
             mState = eGemSwitching;
@@ -579,29 +579,40 @@ Coord GameBoard::getCoord (int mX, int mY)
        (mY - 41) / 65 );
 }
 
-bool GameBoard::checkClickedSquare(int mX, int mY)
+bool GameBoard::checkClickedSquare(Coord coord, bool forgiving)
 {
-    // Get the selected square
-    mSelectedSquareSecond = getCoord(mX, mY);
-
-    // If it's a contiguous square
-    if (abs(mSelectedSquareFirst.x - mSelectedSquareSecond.x) +
-        abs(mSelectedSquareFirst.y - mSelectedSquareSecond.y) == 1)
-    {
-        // Create a temporal board with the movement already performed
-        Board temporal = mBoard;
-        temporal.swap(mSelectedSquareFirst.x, mSelectedSquareFirst.y,
-                      mSelectedSquareSecond.x, mSelectedSquareSecond.y);
-
-        // Check if there are grouped gems in that new board
-        mGroupedSquares = temporal.check();
-
-        // If there are winning movements
-        if (! mGroupedSquares.empty())
-        {
-            return true;
-        }
+    int distanceX = coord.x - mSelectedSquareFirst.x;
+    int distanceY = coord.y - mSelectedSquareFirst.y;
+    
+    // Ignore all non-adjacent tiles when forgiving=false.
+    if (!forgiving && abs(distanceX) + abs(distanceY) != 1) {
+        return false;
     }
+    
+    // Ignore diagonal moves - those are probably accidental.
+    if (abs(distanceX) == abs(distanceY)) {
+        return false;
+    }
+    
+    mSelectedSquareSecond = mSelectedSquareFirst;
+    
+    if (abs(distanceX) > abs(distanceY)) {
+        // Horizontal move
+        mSelectedSquareSecond.x += (distanceX < 0 ? -1 : +1);
+    }
+    else {
+        // Vertical move
+        mSelectedSquareSecond.y += (distanceY < 0 ? -1 : +1);
+    }
+    
+    // Create a temporary board with the movement already performed
+    Board tempBoard = mBoard;
+    tempBoard.swap(mSelectedSquareFirst.x, mSelectedSquareFirst.y,
+                  mSelectedSquareSecond.x, mSelectedSquareSecond.y);
 
-    return false;
+    // Check if there are grouped gems in that new board
+    mGroupedSquares = tempBoard.check();
+
+    // If there are winning movements
+    return !mGroupedSquares.empty();
 }
