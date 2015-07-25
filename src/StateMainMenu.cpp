@@ -109,11 +109,13 @@ void StateMainMenu::buttonDown(Gosu::Button btn)
             break;
 
         case Gosu::kbDown:
-            mMenuSelectedOption = (mMenuSelectedOption + 1) % mMenuTargets.size();
+            mMenuSelectedOption =
+                Gosu::wrap(mMenuSelectedOption + 1, 0, (int)mMenuTargets.size());
             break;
 
         case Gosu::kbUp:
-            mMenuSelectedOption = (mMenuSelectedOption - 1) % mMenuTargets.size();
+            mMenuSelectedOption =
+                Gosu::wrap(mMenuSelectedOption - 1, 0, (int)mMenuTargets.size());
             break;
 
         case Gosu::kbReturn:
