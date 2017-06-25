@@ -2,7 +2,7 @@
 
 void GameHint::setWindow (Gosu::Window * w)
 {
-    mImgSelector.reset(new Gosu::Image(L"media/selector.png"));
+    mImgSelector.reset(new Gosu::Image("media/selector.png"));
 }
 
 void GameHint::showHint(Coord location)

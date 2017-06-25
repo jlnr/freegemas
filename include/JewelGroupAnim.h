@@ -12,13 +12,13 @@ class JewelGroupAnim
 public:
     void loadResources (Gosu::Window * w)
     {
-        imgGems.push_back(Gosu::Image(L"media/gemWhite.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemRed.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemPurple.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemOrange.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemGreen.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemYellow.png"));
-        imgGems.push_back(Gosu::Image(L"media/gemBlue.png"));
+        imgGems.push_back(Gosu::Image("media/gemWhite.png"));
+        imgGems.push_back(Gosu::Image("media/gemRed.png"));
+        imgGems.push_back(Gosu::Image("media/gemPurple.png"));
+        imgGems.push_back(Gosu::Image("media/gemOrange.png"));
+        imgGems.push_back(Gosu::Image("media/gemGreen.png"));
+        imgGems.push_back(Gosu::Image("media/gemYellow.png"));
+        imgGems.push_back(Gosu::Image("media/gemBlue.png"));
 
         for (int i = 0; i < 7; ++i)
         {

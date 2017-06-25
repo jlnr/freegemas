@@ -31,9 +31,9 @@ struct Particle{
         float tempPos = Animation::easeOutQuart(mCurrentStep, 0, 1, mTotalSteps);
 
         if (tempPos >= lim) {
-            mColor.setAlpha(255 * (1 - (tempPos - lim) / (1 - lim)));
+            mColor.set_alpha(255 * (1 - (tempPos - lim) / (1 - lim)));
         } else {
-            mColor.setAlpha(255);
+            mColor.set_alpha(255);
         }
 
         mSizeCoef = mSize * (1 - tempPos);
@@ -97,8 +97,8 @@ public:
         mPosY(y),
         mActive(true),
         // Load the images for the particles
-        mImgParticle1(L"media/partc1.png"),
-        mImgParticle2(L"media/partc2.png")
+        mImgParticle1("media/partc1.png"),
+        mImgParticle2("media/partc2.png")
     {
         // Reserve the space for the particles
         mParticleVector.reserve(mParticleQuantity);

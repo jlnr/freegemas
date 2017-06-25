@@ -14,7 +14,7 @@ Gosu::Window& windowInstance()
 
 int main()
 {
-    Gosu::useResourceDirectory();
+    Gosu::use_resource_directory();
     
     Game window;
     window.show();

@@ -50,8 +50,8 @@ public:
 
     BaseButton();
     
-    void set(Gosu::Window * parentWindow, std::wstring caption, std::wstring iconPath);
-    void setText(std::wstring caption);
+    void set(Gosu::Window * parentWindow, std::string caption, std::string iconPath);
+    void setText(std::string caption);
 
     void draw(int x, int y, double z);
 

@@ -3,6 +3,6 @@
 
 #include <string>
 
-std::wstring _(const char * stringName);
+std::string _(const char * stringName);
 
 #endif /* _INTER_H_ */

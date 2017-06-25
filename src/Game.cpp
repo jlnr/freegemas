@@ -10,11 +10,11 @@ using namespace std;
 
 Game::Game () :
     Gosu::Window(800, 600),
-    mMouseCursor(L"media/handCursor.png")
+    mMouseCursor("media/handCursor.png")
 {
     lDEBUG << Log::CON("Game");
 
-    setCaption(L"FreeGemas");
+    set_caption("FreeGemas");
     
     changeState("stateMainMenu");
     
@@ -35,53 +35,53 @@ void Game::update ()
 void Game::draw ()
 {
     #ifndef GOSU_IS_MOBILE
-    mMouseCursor.draw(input().mouseX(), input().mouseY(), 999);
+    mMouseCursor.draw(input().mouse_x(), input().mouse_y(), 999);
     #endif
 
     if (mCurrentState)
         mCurrentState -> draw();
 }
 
-void Game::buttonDown (Gosu::Button button)
+void Game::button_down (Gosu::Button button)
 {
     if (mCurrentState)
         mCurrentState -> buttonDown(button);
 }
 
-void Game::buttonUp (Gosu::Button button)
+void Game::button_up (Gosu::Button button)
 {
     if (mCurrentState)
         mCurrentState -> buttonUp(button);
 }
 
-void Game::touchBegan(Gosu::Touch touch)
+void Game::touch_began(Gosu::Touch touch)
 {
     if (mCurrentState && mMouseSimulatingTouch == nullptr) {
         mMouseSimulatingTouch = touch.id;
-        input().setMousePosition(touch.x, touch.y);
-        mCurrentState->buttonDown(Gosu::msLeft);
+        input().set_mouse_position(touch.x, touch.y);
+        mCurrentState->buttonDown(Gosu::MS_LEFT);
     }
 }
 
-void Game::touchMoved(Gosu::Touch touch)
+void Game::touch_moved(Gosu::Touch touch)
 {
     if (mCurrentState && mMouseSimulatingTouch == touch.id) {
-        input().setMousePosition(touch.x, touch.y);
+        input().set_mouse_position(touch.x, touch.y);
     }
 }
 
-void Game::touchEnded(Gosu::Touch touch)
+void Game::touch_ended(Gosu::Touch touch)
 {
     if (mCurrentState && mMouseSimulatingTouch == touch.id) {
-        input().setMousePosition(touch.x, touch.y);
-        mCurrentState->buttonUp(Gosu::msLeft);
+        input().set_mouse_position(touch.x, touch.y);
+        mCurrentState->buttonUp(Gosu::MS_LEFT);
         mMouseSimulatingTouch = nullptr;
     }
 }
 
-void Game::touchCancelled(Gosu::Touch touch)
+void Game::touch_cancelled(Gosu::Touch touch)
 {
-    touchEnded(touch);
+    touch_ended(touch);
 }
 
 void Game::changeState(string S)
@@ -111,7 +111,7 @@ void Game::changeState(string S)
     }
 }
 
-bool Game::needsCursor() const
+bool Game::needs_cursor() const
 {
     return false;
 }

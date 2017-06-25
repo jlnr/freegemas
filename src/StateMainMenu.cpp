@@ -9,11 +9,11 @@
 
 StateMainMenu::StateMainMenu(Game * p) : State(p),
     // Init background image
-    mImgBackground(L"media/stateMainMenu/mainMenuBackground.png"),
+    mImgBackground("media/stateMainMenu/mainMenuBackground.png"),
     // Init logo image
-    mImgLogo(L"media/stateMainMenu/mainMenuLogo.png"),
+    mImgLogo("media/stateMainMenu/mainMenuLogo.png"),
     // Init menu highlight image
-    mImgHighl(L"media/stateMainMenu/menuHighlight.png")
+    mImgHighl("media/stateMainMenu/menuHighlight.png")
 {
     lDEBUG << Log::CON("StateMainMenu");
 
@@ -23,9 +23,9 @@ StateMainMenu::StateMainMenu(Game * p) : State(p),
     mMenuTargets = {"stateGame", "stateHowtoplay", "stateQuit"};
 
     // Menu text items
-    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("Timetrial mode"), L"media/fuenteMenu.ttf", 30)));
-    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("How to play?"), L"media/fuenteMenu.ttf", 30)));
-    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::createText(_("Exit"), L"media/fuenteMenu.ttf", 30)));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::create_text(_("Timetrial mode"), "media/fuenteMenu.ttf", 30)));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::create_text(_("How to play?"), "media/fuenteMenu.ttf", 30)));
+    mMenuRenderedTexts.push_back(Gosu::Image(Gosu::create_text(_("Exit"), "media/fuenteMenu.ttf", 30)));
 
     // Jewel group animation
     mJewelAnimation.loadResources(p);
@@ -58,7 +58,7 @@ void StateMainMenu::update(){
     }
 
     // Update menu highlighting according to mouse position
-    int mY = (int) mGame -> input().mouseY();
+    int mY = (int) mGame -> input().mouse_y();
 
     if(mY >= mMenuYStart && mY < mMenuYEnd)
     {
@@ -104,28 +104,28 @@ void StateMainMenu::buttonDown(Gosu::Button btn)
 {
     switch (btn.id())
     {
-        case Gosu::kbEscape:
+        case Gosu::KB_ESCAPE:
             mGame->close();
             break;
 
-        case Gosu::kbDown:
+        case Gosu::KB_DOWN:
             mMenuSelectedOption =
                 Gosu::wrap(mMenuSelectedOption + 1, 0, (int)mMenuTargets.size());
             break;
 
-        case Gosu::kbUp:
+        case Gosu::KB_UP:
             mMenuSelectedOption =
                 Gosu::wrap(mMenuSelectedOption - 1, 0, (int)mMenuTargets.size());
             break;
 
-        case Gosu::kbReturn:
-        case Gosu::kbEnter:
+        case Gosu::KB_RETURN:
+        case Gosu::KB_ENTER:
             optionChosen();
             break;
         
-        case Gosu::msLeft: {
+        case Gosu::MS_LEFT: {
             // Get mouse vertical position
-            int mY = mGame->input().mouseY();
+            int mY = mGame->input().mouse_y();
             
             if (mY >= mMenuYStart && mY <= mMenuYEnd)
             {

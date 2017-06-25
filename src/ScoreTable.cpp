@@ -13,11 +13,11 @@ using namespace std;
 
 ScoreTable::ScoreTable(Game * p, int score) : mGame(p),
 
-    mRenderedHeader(Gosu::createText(_("GAME OVER"), L"media/fuenteMenu.ttf", 60)),
+    mRenderedHeader(Gosu::create_text(_("GAME OVER"), "media/fuenteMenu.ttf", 60)),
                     
-    mRenderedScore(Gosu::createText(std::to_wstring(score), L"media/fuentelcd.ttf", 72)),
+    mRenderedScore(Gosu::create_text(std::to_string(score), "media/fuentelcd.ttf", 72)),
                     
-    mRenderedLastScore(Gosu::createText(_("Latest high score: ") + std::to_wstring(getAndUpdateScore(score)), L"media/fuenteNormal.ttf", 35))
+    mRenderedLastScore(Gosu::create_text(_("Latest high score: ") + std::to_string(getAndUpdateScore(score)), "media/fuenteNormal.ttf", 35))
 {
     scoreBoardWidth = 300;
 }

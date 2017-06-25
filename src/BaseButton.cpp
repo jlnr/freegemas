@@ -5,12 +5,12 @@
 BaseButton::BaseButton() { }
 
 
-void BaseButton::set (Gosu::Window * parentWindow, std::wstring caption, std::wstring iconPath)
+void BaseButton::set (Gosu::Window * parentWindow, std::string caption, std::string iconPath)
 {
     mParentWindow = parentWindow;
 
     // Load the background image
-    mImgBackground.reset(new Gosu::Image(L"media/buttonBackground.png"));
+    mImgBackground.reset(new Gosu::Image("media/buttonBackground.png"));
 
     // Set the flag
     mHasIcon = !iconPath.empty();
@@ -18,16 +18,16 @@ void BaseButton::set (Gosu::Window * parentWindow, std::wstring caption, std::ws
     // Load the icon image
     if (mHasIcon)
     {
-        mImgIcon.reset(new Gosu::Image(L"media/" + iconPath));
+        mImgIcon.reset(new Gosu::Image("media/" + iconPath));
     }
 
     setText(caption);
 }
 
-void BaseButton::setText(std::wstring caption)
+void BaseButton::setText(std::string caption)
 {
     // Generate the button caption texture
-    Gosu::Bitmap bitmap = Gosu::createText(caption, L"media/fuenteNormal.ttf", 27);
+    Gosu::Bitmap bitmap = Gosu::create_text(caption, "media/fuenteNormal.ttf", 27);
     mImgCaption.reset(new Gosu::Image(bitmap));
 
     // Calculate the position of the text

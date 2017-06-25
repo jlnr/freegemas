@@ -19,24 +19,24 @@ void GameIndicators::setGame (Game * g, StateGame * sg)
 
 void GameIndicators::loadResources()
 {
-    mImgScoreHeader.reset(new Gosu::Image(Gosu::createText(_("score"), L"media/fuenteNormal.ttf", 37)));
+    mImgScoreHeader.reset(new Gosu::Image(Gosu::create_text(_("score"), "media/fuenteNormal.ttf", 37)));
 
-    mImgTimeHeader.reset(new Gosu::Image(Gosu::createText(_("time left"), L"media/fuenteNormal.ttf", 37)));
+    mImgTimeHeader.reset(new Gosu::Image(Gosu::create_text(_("time left"), "media/fuenteNormal.ttf", 37)));
 
     // Load the background image for the time
-    mImgTimeBackground.reset(new Gosu::Image(L"media/timeBackground.png"));
+    mImgTimeBackground.reset(new Gosu::Image("media/timeBackground.png"));
 
     // Load the background image for the scoreboard
-    mImgScoreBackground.reset(new Gosu::Image(L"media/scoreBackground.png"));
+    mImgScoreBackground.reset(new Gosu::Image("media/scoreBackground.png"));
 
     // Buttons
-    mHintButton.set(mGame, _("Show hint"), L"iconHint.png");
-    mResetButton.set(mGame, _("Reset game"), L"iconRestart.png");
-    mExitButton.set(mGame, _("Exit"), L"iconExit.png");
-    mMusicButton.set(mGame, _("Turn off music"), L"iconMusic.png");
+    mHintButton.set(mGame, _("Show hint"), "iconHint.png");
+    mResetButton.set(mGame, _("Reset game"), "iconRestart.png");
+    mExitButton.set(mGame, _("Exit"), "iconExit.png");
+    mMusicButton.set(mGame, _("Turn off music"), "iconMusic.png");
 
     // Music
-    sfxSong.reset(new Gosu::Song(L"media/music.ogg"));
+    sfxSong.reset(new Gosu::Song("media/music.ogg"));
     sfxSong->play();
 }
 
@@ -64,7 +64,7 @@ void GameIndicators::regenerateScoreTexture()
     // Regenerate the texture if the score has changed
     if (mScore != mScorePrevious)
     {
-        mImgScore.reset(new Gosu::Image(Gosu::createText(std::to_wstring(mScore), L"media/fuentelcd.ttf", 33)));
+        mImgScore.reset(new Gosu::Image(Gosu::create_text(std::to_string(mScore), "media/fuentelcd.ttf", 33)));
         mScorePrevious = mScore;
     }
 }
@@ -79,11 +79,11 @@ void GameIndicators::updateTime (double time)
         int minutes = int(mRemainingTime / 60);
         int seconds = int(mRemainingTime - minutes * 60);
 
-        std::wstring txtTime = std::to_wstring(minutes) +
-            (seconds < 10 ? L":0" : L":") +
-            std::to_wstring(seconds);
+        std::string txtTime = std::to_string(minutes) +
+            (seconds < 10 ? ":0" : ":") +
+            std::to_string(seconds);
 
-        mImgTime.reset(new Gosu::Image(Gosu::createText(txtTime, L"media/fuentelcd.ttf", 62)));
+        mImgTime.reset(new Gosu::Image(Gosu::create_text(txtTime, "media/fuentelcd.ttf", 62)));
 
         mRemainingTimePrevious = mRemainingTime;
     }

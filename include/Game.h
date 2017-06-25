@@ -13,26 +13,25 @@ class Game : public Gosu::Window
 {
 
 public:
-    Game ();
+    Game();
     ~Game() override;
 
     void update() override;
 
     void draw() override;
 
-    void buttonDown(Gosu::Button button) override;
-    void buttonUp(Gosu::Button button) override;
-    void touchBegan(Gosu::Touch touch) override;
-    void touchMoved(Gosu::Touch touch) override;
-    void touchEnded(Gosu::Touch touch) override;
-    void touchCancelled(Gosu::Touch touch) override;
+    void button_down(Gosu::Button button) override;
+    void button_up(Gosu::Button button) override;
+    void touch_began(Gosu::Touch touch) override;
+    void touch_moved(Gosu::Touch touch) override;
+    void touch_ended(Gosu::Touch touch) override;
+    void touch_cancelled(Gosu::Touch touch) override;
 
     void changeState(std::string S);
     
-    bool needsCursor() const;
+    bool needs_cursor() const override;
 
 private:
-
     std::shared_ptr<State> mCurrentState = nullptr;
     std::string mCurrentStateString;
 

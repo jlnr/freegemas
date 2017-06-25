@@ -7,7 +7,7 @@
 
 StateGame::StateGame(Game * p) : State(p),
     // Load the loading screen
-    mImgLoadingBanner(L"media/loadingBanner.png")
+    mImgLoadingBanner("media/loadingBanner.png")
 {
     lDEBUG << Log::CON("StateGame");
 
@@ -83,24 +83,24 @@ void StateGame::draw()
 
 void StateGame::buttonDown(Gosu::Button btn)
 {
-    if (btn.id() == Gosu::kbEscape)
+    if (btn.id() == Gosu::KB_ESCAPE)
     {
         mGame -> changeState("stateMainMenu");
     }
 
-    else if (btn.id() == Gosu::kbH)
+    else if (btn.id() == Gosu::KB_H)
     {
         showHint();
     }
     
     // Left mouse button was pressed
-    else if (btn.id() == Gosu::msLeft)
+    else if (btn.id() == Gosu::MS_LEFT)
     {
         mMousePressed = true;
         
         // Get click location
-        int mouseX = mGame->input().mouseX();
-        int mouseY = mGame->input().mouseY();
+        int mouseX = mGame->input().mouse_x();
+        int mouseY = mGame->input().mouse_y();
         
         // Inform the UI
         mGameIndicators.click(mouseX, mouseY);
@@ -114,13 +114,13 @@ void StateGame::buttonDown(Gosu::Button btn)
 void StateGame::buttonUp(Gosu::Button btn)
 {
     // Left mouse button was released
-    if (btn.id() == Gosu::msLeft)
+    if (btn.id() == Gosu::MS_LEFT)
     {
         mMousePressed = false;
 
         // Get click location
-        int mouseX = mGame->input().mouseX();
-        int mouseY = mGame->input().mouseY();
+        int mouseX = mGame->input().mouse_x();
+        int mouseY = mGame->input().mouse_y();
 
         // Inform the board
         mGameBoard.mouseButtonUp(mouseX, mouseY);
@@ -161,7 +161,7 @@ void StateGame::setState (tState state)
 void StateGame::loadResources()
 {
     // Load the background image
-    mImgBoard.reset(new Gosu::Image(L"media/board.png"));
+    mImgBoard.reset(new Gosu::Image("media/board.png"));
 
     mGameIndicators.loadResources();
     mGameBoard.loadResources();

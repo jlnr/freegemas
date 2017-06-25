@@ -35,7 +35,7 @@ class FloatingScore{
 public:
     FloatingScore(Gosu::Window * parentWindow, int score, float x, float y, float z) :
         x_(x), y_(y), z_(z), mCurrentStep(0), mTotalSteps(50),
-        mScoreImage(Gosu::createText(std::to_wstring(score), L"media/fuentelcd.ttf", 60))
+        mScoreImage(Gosu::create_text(std::to_string(score), "media/fuentelcd.ttf", 60))
     {
     }
 

@@ -62,16 +62,16 @@ void GameBoard::endGame(int score)
 
 void GameBoard::loadResources()
 {
-    mImgWhite.reset(new Gosu::Image(L"media/gemWhite.png"));
-    mImgRed.reset(new Gosu::Image(L"media/gemRed.png"));
-    mImgPurple.reset(new Gosu::Image(L"media/gemPurple.png"));
-    mImgOrange.reset(new Gosu::Image(L"media/gemOrange.png"));
-    mImgGreen.reset(new Gosu::Image(L"media/gemGreen.png"));
-    mImgYellow.reset(new Gosu::Image(L"media/gemYellow.png"));
-    mImgBlue.reset(new Gosu::Image(L"media/gemBlue.png"));
+    mImgWhite.reset(new Gosu::Image("media/gemWhite.png"));
+    mImgRed.reset(new Gosu::Image("media/gemRed.png"));
+    mImgPurple.reset(new Gosu::Image("media/gemPurple.png"));
+    mImgOrange.reset(new Gosu::Image("media/gemOrange.png"));
+    mImgGreen.reset(new Gosu::Image("media/gemGreen.png"));
+    mImgYellow.reset(new Gosu::Image("media/gemYellow.png"));
+    mImgBlue.reset(new Gosu::Image("media/gemBlue.png"));
 
     // Load the image for the square selector
-    mImgSelector.reset(new Gosu::Image(L"media/selector.png"));
+    mImgSelector.reset(new Gosu::Image("media/selector.png"));
 
     // Initialise the hint
     mHint.setWindow(mGame);
@@ -268,8 +268,8 @@ void GameBoard::update()
 void GameBoard::draw()
 {
     // Get mouse position
-    int mX = (int) mGame -> input().mouseX();
-    int mY = (int) mGame -> input().mouseY();
+    int mX = (int) mGame -> input().mouse_x();
+    int mY = (int) mGame -> input().mouse_y();
 
     #ifndef GOSU_IS_MOBILE
     // Draw the selector if the mouse is over a gem

@@ -2,11 +2,11 @@
 
 void GameBoardSounds::loadResources()
 {
-    mSfxSelect.reset(new Gosu::Sample(L"media/select.ogg"));
-    mSfxFall.reset(new Gosu::Sample(L"media/fall.ogg"));
-    mSfxMatch1.reset(new Gosu::Sample(L"media/match1.ogg"));
-    mSfxMatch2.reset(new Gosu::Sample(L"media/match2.ogg"));
-    mSfxMatch3.reset(new Gosu::Sample(L"media/match3.ogg"));
+    mSfxSelect.reset(new Gosu::Sample("media/select.ogg"));
+    mSfxFall.reset(new Gosu::Sample("media/fall.ogg"));
+    mSfxMatch1.reset(new Gosu::Sample("media/match1.ogg"));
+    mSfxMatch2.reset(new Gosu::Sample("media/match2.ogg"));
+    mSfxMatch3.reset(new Gosu::Sample("media/match3.ogg"));
 }
 
 void GameBoardSounds::playSoundSelect()

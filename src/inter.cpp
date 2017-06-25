@@ -6,7 +6,7 @@
 #include <locale.h>
 #endif
 
-std::wstring _(const char * stringName) {
+std::string _(const char * stringName) {
     const char * translation;
     
     #if defined(GOSU_IS_UNIX) && !defined(GOSU_IS_MAC)
@@ -16,5 +16,5 @@ std::wstring _(const char * stringName) {
     translation = stringName;
     #endif
     
-    return translation ? Gosu::utf8ToWstring(translation) : std::wstring();
+    return translation ? translation : std::string();
 }
