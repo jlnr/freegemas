@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		702307AB9ECC9EE6D83D7973 /* libPods-MobileFreeGemas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A874D0C20EAAEC8139AE53 /* libPods-MobileFreeGemas.a */; };
+		7CAB85430116E8426F5888FF /* libPods-FreeGemasMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D059DD0E24478DB8D465277F /* libPods-FreeGemasMac.a */; };
 		D495F6E81B5CFEC800632CBB /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D21B5CFEC800632CBB /* Animation.cpp */; };
 		D495F6E91B5CFEC800632CBB /* BaseButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D31B5CFEC800632CBB /* BaseButton.cpp */; };
 		D495F6EA1B5CFEC800632CBB /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D41B5CFEC800632CBB /* Board.cpp */; };
@@ -25,7 +25,6 @@
 		D495F6FC1B5CFEC800632CBB /* StateMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E61B5CFEC800632CBB /* StateMainMenu.cpp */; };
 		D495F7451B5D1B5F00632CBB /* inter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F7441B5D1B5F00632CBB /* inter.cpp */; };
 		D495F7471B5D2B5B00632CBB /* media in Resources */ = {isa = PBXBuildFile; fileRef = D495F7461B5D2B5B00632CBB /* media */; };
-		D495F75C1B5D6B0A00632CBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D495F75B1B5D6B0A00632CBB /* Images.xcassets */; };
 		D495F7721B5D6B1900632CBB /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D21B5CFEC800632CBB /* Animation.cpp */; };
 		D495F7731B5D6B1900632CBB /* BaseButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D31B5CFEC800632CBB /* BaseButton.cpp */; };
 		D495F7741B5D6B1900632CBB /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6D41B5CFEC800632CBB /* Board.cpp */; };
@@ -45,15 +44,17 @@
 		D495F7831B5D6B1D00632CBB /* media in Resources */ = {isa = PBXBuildFile; fileRef = D495F7461B5D2B5B00632CBB /* media */; };
 		D495F7841B5D6B5E00632CBB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E11B5CFEC800632CBB /* main.cpp */; };
 		D495F7851B5D6DBE00632CBB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D495F6E11B5CFEC800632CBB /* main.cpp */; };
-		E79E4CD05BA717B8107B38A9 /* libPods-FreeGemas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA004F5D183C153331FCC6E5 /* libPods-FreeGemas.a */; };
+		D4EA45E61F005212009B13D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EA45E51F005212009B13D0 /* Images.xcassets */; };
+		EDA2E701F4836B95762D35CC /* libPods-FreeGemas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC437FCD03E6DBE0C7726E31 /* libPods-FreeGemas.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03D14B1C93530BBDD7FCB044 /* Pods-MobileFreeGemas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFreeGemas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFreeGemas/Pods-MobileFreeGemas.debug.xcconfig"; sourceTree = "<group>"; };
-		04A874D0C20EAAEC8139AE53 /* libPods-MobileFreeGemas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFreeGemas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A4A6AFC120D620D97891E06 /* Pods-FreeGemas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemas.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas.release.xcconfig"; sourceTree = "<group>"; };
-		CF25269BE729F56E1595E14B /* Pods-FreeGemas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas.debug.xcconfig"; sourceTree = "<group>"; };
-		D495F6431B5CFE2A00632CBB /* FreeGemas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeGemas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B35A1F31E7D3BE6A0E7F2A6 /* Pods-FreeGemas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemas.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas.release.xcconfig"; sourceTree = "<group>"; };
+		374C5333DB36E207A0E11D18 /* Pods-FreeGemas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas.debug.xcconfig"; sourceTree = "<group>"; };
+		79749DA607A16994E37571A3 /* Pods-FreeGemasMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemasMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemasMac/Pods-FreeGemasMac.debug.xcconfig"; sourceTree = "<group>"; };
+		91F9C3DC86CD6179270B3B5C /* libPods-MobileFreeGemas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileFreeGemas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D059DD0E24478DB8D465277F /* libPods-FreeGemasMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeGemasMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D495F6431B5CFE2A00632CBB /* FreeGemasMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeGemasMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D495F6471B5CFE2A00632CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D495F6B31B5CFEC800632CBB /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		D495F6B41B5CFEC800632CBB /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
@@ -95,11 +96,11 @@
 		D495F6E61B5CFEC800632CBB /* StateMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateMainMenu.cpp; sourceTree = "<group>"; };
 		D495F7441B5D1B5F00632CBB /* inter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inter.cpp; sourceTree = "<group>"; };
 		D495F7461B5D2B5B00632CBB /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; name = media; path = ../../media; sourceTree = "<group>"; };
-		D495F74C1B5D6B0900632CBB /* MobileFreeGemas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFreeGemas.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D495F74F1B5D6B0A00632CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D495F75B1B5D6B0A00632CBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E58F867AE0D271424CFC3E99 /* Pods-MobileFreeGemas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFreeGemas.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFreeGemas/Pods-MobileFreeGemas.release.xcconfig"; sourceTree = "<group>"; };
-		EA004F5D183C153331FCC6E5 /* libPods-FreeGemas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeGemas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D495F74C1B5D6B0900632CBB /* FreeGemas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeGemas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EA45E31F0051F0009B13D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreeGemasMac/Info.plist; sourceTree = SOURCE_ROOT; };
+		D4EA45E51F005212009B13D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DA19A242D0D2149F43327B3D /* Pods-FreeGemasMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeGemasMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeGemasMac/Pods-FreeGemasMac.release.xcconfig"; sourceTree = "<group>"; };
+		FC437FCD03E6DBE0C7726E31 /* libPods-FreeGemas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeGemas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79E4CD05BA717B8107B38A9 /* libPods-FreeGemas.a in Frameworks */,
+				7CAB85430116E8426F5888FF /* libPods-FreeGemasMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,29 +116,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				702307AB9ECC9EE6D83D7973 /* libPods-MobileFreeGemas.a in Frameworks */,
+				EDA2E701F4836B95762D35CC /* libPods-FreeGemas.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		196C4CD388C50A47688B3009 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				374C5333DB36E207A0E11D18 /* Pods-FreeGemas.debug.xcconfig */,
+				0B35A1F31E7D3BE6A0E7F2A6 /* Pods-FreeGemas.release.xcconfig */,
+				79749DA607A16994E37571A3 /* Pods-FreeGemasMac.debug.xcconfig */,
+				DA19A242D0D2149F43327B3D /* Pods-FreeGemasMac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BAA4874365FAF188381A6E87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC437FCD03E6DBE0C7726E31 /* libPods-FreeGemas.a */,
+				91F9C3DC86CD6179270B3B5C /* libPods-MobileFreeGemas.a */,
+				D059DD0E24478DB8D465277F /* libPods-FreeGemasMac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D495F63A1B5CFE2A00632CBB = {
 			isa = PBXGroup;
 			children = (
 				D495F6451B5CFE2A00632CBB /* FreeGemas */,
-				D495F74D1B5D6B0900632CBB /* MobileFreeGemas */,
+				D495F74D1B5D6B0900632CBB /* FreeGemasMac */,
 				D495F6441B5CFE2A00632CBB /* Products */,
-				DDEC37AAE7AB8025CEFACBF8 /* Pods */,
-				DE594D0242722651EB4F4E0F /* Frameworks */,
+				196C4CD388C50A47688B3009 /* Pods */,
+				BAA4874365FAF188381A6E87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D495F6441B5CFE2A00632CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D495F6431B5CFE2A00632CBB /* FreeGemas.app */,
-				D495F74C1B5D6B0900632CBB /* MobileFreeGemas.app */,
+				D495F6431B5CFE2A00632CBB /* FreeGemasMac.app */,
+				D495F74C1B5D6B0900632CBB /* FreeGemas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +171,7 @@
 				D495F6D11B5CFEC800632CBB /* src */,
 				D495F6461B5CFE2A00632CBB /* Supporting Files */,
 				D495F7461B5D2B5B00632CBB /* media */,
+				D4EA45E51F005212009B13D0 /* Images.xcassets */,
 			);
 			path = FreeGemas;
 			sourceTree = "<group>";
@@ -216,82 +239,64 @@
 			path = ../../src;
 			sourceTree = "<group>";
 		};
-		D495F74D1B5D6B0900632CBB /* MobileFreeGemas */ = {
+		D495F74D1B5D6B0900632CBB /* FreeGemasMac */ = {
 			isa = PBXGroup;
 			children = (
-				D495F75B1B5D6B0A00632CBB /* Images.xcassets */,
 				D495F74E1B5D6B0A00632CBB /* Supporting Files */,
 			);
+			name = FreeGemasMac;
 			path = MobileFreeGemas;
 			sourceTree = "<group>";
 		};
 		D495F74E1B5D6B0A00632CBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D495F74F1B5D6B0A00632CBB /* Info.plist */,
+				D4EA45E31F0051F0009B13D0 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DDEC37AAE7AB8025CEFACBF8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CF25269BE729F56E1595E14B /* Pods-FreeGemas.debug.xcconfig */,
-				2A4A6AFC120D620D97891E06 /* Pods-FreeGemas.release.xcconfig */,
-				03D14B1C93530BBDD7FCB044 /* Pods-MobileFreeGemas.debug.xcconfig */,
-				E58F867AE0D271424CFC3E99 /* Pods-MobileFreeGemas.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		DE594D0242722651EB4F4E0F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA004F5D183C153331FCC6E5 /* libPods-FreeGemas.a */,
-				04A874D0C20EAAEC8139AE53 /* libPods-MobileFreeGemas.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D495F6421B5CFE2A00632CBB /* FreeGemas */ = {
+		D495F6421B5CFE2A00632CBB /* FreeGemasMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D495F6601B5CFE2A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemas" */;
+			buildConfigurationList = D495F6601B5CFE2A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemasMac" */;
 			buildPhases = (
-				B8EE49230B0A6C024DFC013B /* Check Pods Manifest.lock */,
+				289C95E0537C70DADCC2DF99 /* [CP] Check Pods Manifest.lock */,
 				D495F63F1B5CFE2A00632CBB /* Sources */,
 				D495F6401B5CFE2A00632CBB /* Frameworks */,
 				D495F6411B5CFE2A00632CBB /* Resources */,
-				22F895CA50B0F7D17C6C0EC0 /* Copy Pods Resources */,
+				EB0F163AD633AC399D9EF50B /* [CP] Embed Pods Frameworks */,
+				A0D30AF0057C3FC07B1F0388 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreeGemasMac;
+			productName = FreeGemas;
+			productReference = D495F6431B5CFE2A00632CBB /* FreeGemasMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D495F74B1B5D6B0900632CBB /* FreeGemas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D495F76C1B5D6B0A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemas" */;
+			buildPhases = (
+				9654DA1110935D5FD398D234 /* [CP] Check Pods Manifest.lock */,
+				D495F7481B5D6B0900632CBB /* Sources */,
+				D495F7491B5D6B0900632CBB /* Frameworks */,
+				D495F74A1B5D6B0900632CBB /* Resources */,
+				B07A82991A33FB35EE174781 /* [CP] Embed Pods Frameworks */,
+				823B95171DE5D0BB96C08070 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FreeGemas;
-			productName = FreeGemas;
-			productReference = D495F6431B5CFE2A00632CBB /* FreeGemas.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D495F74B1B5D6B0900632CBB /* MobileFreeGemas */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D495F76C1B5D6B0A00632CBB /* Build configuration list for PBXNativeTarget "MobileFreeGemas" */;
-			buildPhases = (
-				7E702349BA37E2A557867D06 /* Check Pods Manifest.lock */,
-				D495F7481B5D6B0900632CBB /* Sources */,
-				D495F7491B5D6B0900632CBB /* Frameworks */,
-				D495F74A1B5D6B0900632CBB /* Resources */,
-				929E8D504DF243C9AF5B76A6 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MobileFreeGemas;
 			productName = MobileFreeGemas;
-			productReference = D495F74C1B5D6B0900632CBB /* MobileFreeGemas.app */;
+			productReference = D495F74C1B5D6B0900632CBB /* FreeGemas.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -300,7 +305,7 @@
 		D495F63B1B5CFE2A00632CBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Julian Raschke";
 				TargetAttributes = {
 					D495F6421B5CFE2A00632CBB = {
@@ -324,8 +329,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D495F6421B5CFE2A00632CBB /* FreeGemas */,
-				D495F74B1B5D6B0900632CBB /* MobileFreeGemas */,
+				D495F6421B5CFE2A00632CBB /* FreeGemasMac */,
+				D495F74B1B5D6B0900632CBB /* FreeGemas */,
 			);
 		};
 /* End PBXProject section */
@@ -344,21 +349,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				D495F7831B5D6B1D00632CBB /* media in Resources */,
-				D495F75C1B5D6B0A00632CBB /* Images.xcassets in Resources */,
+				D4EA45E61F005212009B13D0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22F895CA50B0F7D17C6C0EC0 /* Copy Pods Resources */ = {
+		289C95E0537C70DADCC2DF99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		823B95171DE5D0BB96C08070 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,49 +386,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E702349BA37E2A557867D06 /* Check Pods Manifest.lock */ = {
+		9654DA1110935D5FD398D234 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		929E8D504DF243C9AF5B76A6 /* Copy Pods Resources */ = {
+		A0D30AF0057C3FC07B1F0388 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFreeGemas/Pods-MobileFreeGemas-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeGemasMac/Pods-FreeGemasMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B8EE49230B0A6C024DFC013B /* Check Pods Manifest.lock */ = {
+		B07A82991A33FB35EE174781 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeGemas/Pods-FreeGemas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB0F163AD633AC399D9EF50B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeGemasMac/Pods-FreeGemasMac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -478,14 +513,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -501,6 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -520,8 +559,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -537,6 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -544,33 +586,31 @@
 		};
 		D495F6611B5CFE2A00632CBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF25269BE729F56E1595E14B /* Pods-FreeGemas.debug.xcconfig */;
+			baseConfigurationReference = 79749DA607A16994E37571A3 /* Pods-FreeGemasMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FreeGemas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jlnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		D495F6621B5CFE2A00632CBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A4A6AFC120D620D97891E06 /* Pods-FreeGemas.release.xcconfig */;
+			baseConfigurationReference = DA19A242D0D2149F43327B3D /* Pods-FreeGemasMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FreeGemas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jlnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		D495F76D1B5D6B0A00632CBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03D14B1C93530BBDD7FCB044 /* Pods-MobileFreeGemas.debug.xcconfig */;
+			baseConfigurationReference = 374C5333DB36E207A0E11D18 /* Pods-FreeGemas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -580,9 +620,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MobileFreeGemas/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jlnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -591,14 +630,13 @@
 		};
 		D495F76E1B5D6B0A00632CBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E58F867AE0D271424CFC3E99 /* Pods-MobileFreeGemas.release.xcconfig */;
+			baseConfigurationReference = 0B35A1F31E7D3BE6A0E7F2A6 /* Pods-FreeGemas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = MobileFreeGemas/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jlnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -618,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D495F6601B5CFE2A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemas" */ = {
+		D495F6601B5CFE2A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemasMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D495F6611B5CFE2A00632CBB /* Debug */,
@@ -627,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D495F76C1B5D6B0A00632CBB /* Build configuration list for PBXNativeTarget "MobileFreeGemas" */ = {
+		D495F76C1B5D6B0A00632CBB /* Build configuration list for PBXNativeTarget "FreeGemas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D495F76D1B5D6B0A00632CBB /* Debug */,

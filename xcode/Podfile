@@ -1,13 +1,12 @@
-target 'FreeGemas', :exclusive => true do
-  platform :osx, '10.7'
+target "FreeGemasMac" do
+  platform :osx, "10.12"
   
-  pod 'Gosu/Gosu', :path => '../../Gosu/Gosu'
+  pod "Gosu/Gosu", :path => "../../Gosu/Gosu", :inhibit_warnings => true
 end
 
-
-target 'MobileFreeGemas', :exclusive => true do
-  platform :ios, '5.1.1'
+target "FreeGemas" do
+  platform :ios, "9.3"
   
-  pod 'Gosu/MobileGosu', :path => '../../Gosu/Gosu'
-  pod 'Gosu/MobileGosuMain', :path => '../../Gosu/Gosu'
+  pod "Gosu/Gosu", :path => "../../Gosu/Gosu", :inhibit_warnings => true
+  pod "Gosu/GosuAppDelegateMain", :path => "../../Gosu/Gosu"
 end
