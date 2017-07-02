@@ -150,13 +150,5 @@ void Animation::reverse(){
 void Animation::end() { time = duration + initialDelay; update(false); }
 void Animation::init() { time = 0; }
 bool Animation::finished(){
-/*
-    int j = 0;
-    for (int i = 0; i < numAttr; ++i)
-    {
-	if(final[i] == actual[i]) j++;
-    }
-    return j == numAttr;  //*/
-
     return time > duration + initialDelay;
 }

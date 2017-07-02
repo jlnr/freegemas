@@ -95,7 +95,6 @@ float Animation::easeInOutQuart(float t, float b, float c, float d) {
 }
 
 float Animation::easeOutBack(float t, float b, float c, float d){
-//    float s = 1.70158;
     float s = 1.3;
     t = t/d - 1;
     return c*(t*t*((s+1)*t + s) + 1) + b;
