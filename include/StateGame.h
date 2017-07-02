@@ -1,5 +1,5 @@
 /**
- * @file stateJuego.h
+ * @file stateGame.h
  *
  * @author José Tomás Tocino García
  * @date 2010

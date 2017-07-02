@@ -1,5 +1,5 @@
 /**
- * @file ecuaciones.cpp
+ * @file Equations.cpp
  *
  * @author José Tomás Tocino García
  * @date 2010
