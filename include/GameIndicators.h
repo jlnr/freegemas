@@ -61,7 +61,7 @@ private:
     /// Font for the current-score text
     std::unique_ptr<Gosu::Font> mFontScore;
 
-   // Background of the timer
+    /// Background of the timer
     std::unique_ptr<Gosu::Image> mImgTimeBackground;
 
     /// Background for the current-score board
