@@ -5,7 +5,7 @@
 
 __FreeGemas__ is an open source version of the well known Bejeweled, for GNU/Linux, Windows, OS X and iOS. It's written in C++ using [Gosu](https://www.libgosu.org/).
 
-This is a port back to Gosu from (TheOm3ga's new SDL 2 port)[https://github.com/JoseTomasTocino/freegemas]. The original Gosu-based code can be found at [Google Code](http://freegemas.googlecode.com).
+This is a port back to Gosu from [TheOm3ga's new SDL 2 port](https://github.com/JoseTomasTocino/freegemas). The original Gosu-based code can be found at [Google Code](http://freegemas.googlecode.com).
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/JoseTomasTocino/freegemas/static/images/screenshot_1.png">
@@ -14,7 +14,7 @@ This is a port back to Gosu from (TheOm3ga's new SDL 2 port)[https://github.com/
 
 ## WHY!! port it back to Gosu?
 
-I needed toy project for C++ Gosu that would work on desktop and mobile, and I like this codebase :)
+I needed a toy project for C++ Gosu that would work on desktop and mobile, and I like this codebase :)
 
 
 ## Installation
